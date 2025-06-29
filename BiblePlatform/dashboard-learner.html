@@ -1,0 +1,71 @@
+<!-- Declare the HTML document type -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head of the document -->
+<head>
+  <!-- Set character encoding -->
+  <meta charset="UTF-8" />
+  <!-- Ensure proper scaling on mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Set the page title -->
+  <title>Learner Dashboard - Bible Study Platform</title>
+  <!-- Link to external CSS file for styling -->
+  <link rel="stylesheet" href="dashboard-learner.css" />
+</head>
+
+<!-- Body of the document -->
+<body>
+  <!-- Sidebar navigation for dashboard access -->
+  <aside class="sidebar">
+    <!-- Site logo or title -->
+    <div class="logo">Bible Study</div>
+    <!-- Navigation menu items -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Dashboard</a></li> <!-- Active page -->
+        <li><a href="#">My Courses</a></li> <!-- Link to enrolled courses -->
+        <li><a href="#">Quizzes</a></li> <!-- Link to quizzes -->
+        <li><a href="#">Messages</a></li> <!-- Messaging center -->
+        <li><a href="#">Logout</a></li> <!-- Logout action -->
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main content wrapper -->
+  <main class="main-content">
+    <!-- Header of the dashboard page -->
+    <header>
+      <h1>Welcome, Learner</h1> <!-- Personalized greeting -->
+      <p>Here is an overview of your learning progress.</p> <!-- Page subtitle -->
+    </header>
+
+    <!-- Section showing progress summary -->
+    <section class="progress-section">
+      <div class="card">
+        <h3>Courses Enrolled</h3> <!-- Card title -->
+        <p id="courseCount">0</p> <!-- Course count placeholder -->
+      </div>
+      <div class="card">
+        <h3>Quizzes Completed</h3> <!-- Card title -->
+        <p id="quizCount">0</p> <!-- Quiz count placeholder -->
+      </div>
+      <div class="card">
+        <h3>Messages</h3> <!-- Card title -->
+        <p id="messageCount">0</p> <!-- Message count placeholder -->
+      </div>
+    </section>
+
+    <!-- Section showing enrolled courses -->
+    <section class="enrolled-courses">
+      <h2>Enrolled Courses</h2> <!-- Section heading -->
+      <ul id="courseList"> <!-- List of courses (dynamic) -->
+        <!-- Populated using JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Link to external JavaScript for functionality -->
+  <script src="dashboard-learner.js"></script>
+</body>
+</html>

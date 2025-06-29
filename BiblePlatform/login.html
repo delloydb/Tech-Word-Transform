@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to access Bible Study Platform" />
+
+  <!-- Page Title -->
+  <title>Login - Bible Study Platform</title>
+
+  <!-- Favicon (recommended) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="login.css" />
+
+  <!-- Google Sign-In SDK -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="logo">Bible Study</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="/BiblePlatform/course.html">Courses</a></li>
+      <li><a href="donation.html">Donate</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main class="main-content">
+    <!-- Login Form Container -->
+    <div class="login-container">
+      <h1 class="login-title">Login to Your Account</h1>
+
+      <!-- Login Form -->
+      <form id="loginForm" novalidate>
+        <!-- Email Input -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required 
+                 aria-required="true" autocomplete="username" />
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required
+                 aria-required="true" autocomplete="current-password" />
+        </div>
+
+        <!-- Role/Interest Selection -->
+        <div class="form-group">
+          <label for="role">Select Interest</label>
+          <select id="role" name="role" required aria-required="true">
+            <option value="">Choose an option</option>
+            <option value="learner">Learner</option>
+            <option value="tutor">Tutor</option>
+            <option value="community">Community Builder</option>
+          </select>
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit" class="btn btn-primary">Login</button>
+
+        <!-- Divider for social login options -->
+        <div class="divider">
+          <span class="divider-line"></span>
+          <span class="divider-text">or</span>
+          <span class="divider-line"></span>
+        </div>
+
+        <!-- Google Sign-In Button -->
+<div class="google-signin">
+  <div style="text-align: center;">
+    <div id="g_id_onload"
+         data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+         data-context="signin"
+         data-ux_mode="popup"
+         data-callback="handleGoogleSignIn"
+         data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin"
+         data-type="standard"
+         data-size="large"
+         data-theme="outline"
+         data-text="continue_with"
+         data-shape="rectangular"
+         data-logo_alignment="left"
+         data-width="350">
+    </div>
+  </div>
+</div>
+
+
+        <!-- Forgot Password Link -->
+        <p class="forgot-password">
+          <a href="forgot-password.html" aria-label="Forgot password">Forgot Password?</a>
+        </p>
+
+        <!-- Sign Up Link -->
+        <p class="signup-link">
+          Don't have an account? <a href="signup.html" aria-label="Sign up">Register here</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <!-- JavaScript File -->
+  <script src="login.js"></script>
+</body>
+
+</html>

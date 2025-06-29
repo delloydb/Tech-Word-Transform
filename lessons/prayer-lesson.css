@@ -1,0 +1,86 @@
+/* styles.css */
+
+/* Root color variables for easy theme adjustment */
+:root {
+  --blue-dark: #1e3a8a;
+  --blue: #3b82f6;
+  --light-gray: #f9fafb;
+  --white: #ffffff;
+  --text-dark: #111827;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --border-radius: 8px;
+}
+
+/* Base page styling */
+body {
+  margin: 0;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+/* Central content container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 12px var(--shadow);
+}
+
+/* Headings */
+h1 {
+  color: var(--blue-dark);
+  font-size: 2rem;
+}
+
+h2 {
+  color: var(--blue);
+  border-left: 4px solid var(--blue);
+  padding-left: 0.5rem;
+  margin-top: 2rem;
+}
+
+/* Lists */
+ul {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation buttons */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--blue-dark);
+}
+
+/* Optional: fade-in animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

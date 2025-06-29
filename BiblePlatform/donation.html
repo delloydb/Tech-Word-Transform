@@ -1,0 +1,71 @@
+<!-- Declare the document type as HTML5 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Define character encoding as UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- Ensure proper scaling on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the page title in browser tab -->
+  <title>Support Us - Donation</title>
+  <!-- Link external CSS file for styling -->
+  <link rel="stylesheet" href="donation.css">
+  <!-- Link font-awesome for payment icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- Main container for layout -->
+  <div class="donation-wrapper">
+    
+    <!-- Left side: Form input -->
+    <div class="form-section">
+      <!-- Title and subtitle for the donation page -->
+      <header>
+        <h1>Support Our Mission</h1>
+        <p>Your donations help us spread the word through accessible Bible studies.</p>
+      </header>
+
+      <!-- Begin donation form -->
+      <form id="donationForm" class="donation-form">
+        <!-- Full Name input -->
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+
+        <!-- Email input -->
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+        <!-- Donation Amount input -->
+        <label for="amount">Donation Amount (KSH)</label>
+        <input type="number" id="amount" name="amount" required placeholder="e.g., 500">
+
+        <!-- Preset donation buttons -->
+        <div class="preset-options">
+          <span>Select a preset amount:</span>
+          <button type="button" class="preset-btn" data-amount="100">100</button>
+          <button type="button" class="preset-btn" data-amount="500">500</button>
+          <button type="button" class="preset-btn" data-amount="1000">1000</button>
+        </div>
+
+        <!-- Submit form button -->
+        <button type="submit" class="donate-btn">Donate Now</button>
+      </form>
+    </div>
+
+    <!-- Right side: Payment method options -->
+    <div class="payment-methods">
+      <h2>Select Payment Method</h2>
+      <!-- Payment icons (you can link them to actual services) -->
+      <div class="payment-option"><i class="fab fa-cc-visa"></i> Credit/Debit Card</div>
+      <div class="payment-option"><i class="fab fa-paypal"></i> PayPal</div>
+      <div class="payment-option"><i class="fas fa-mobile-alt"></i> M-Pesa</div>
+    </div>
+
+  </div>
+
+  <!-- Link to external JavaScript file -->
+  <script src="donation.js"></script>
+</body>
+</html>

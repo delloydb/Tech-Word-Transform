@@ -1,0 +1,135 @@
+/* Reset default browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set font and body background */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Flex container for side-by-side layout */
+.donation-wrapper {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* Left section for the form */
+.form-section {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Header style for form title and subtitle */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Donation form layout */
+.donation-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.donation-form label {
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Input fields */
+.donation-form input {
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Preset button options */
+.preset-options {
+  margin-top: 1rem;
+}
+
+.preset-btn {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  background-color: #e5eaf2;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.preset-btn:hover {
+  background-color: #c3d2e8;
+}
+
+/* Submit button */
+.donate-btn {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  background-color: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.donate-btn:hover {
+  background-color: #163075;
+}
+
+/* Right side: Payment method section */
+.payment-methods {
+  flex: 1;
+  padding: 2rem;
+  background-color: #f0f4fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.payment-methods h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #1e3a8a;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.payment-option i {
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+  color: #1e3a8a;
+}

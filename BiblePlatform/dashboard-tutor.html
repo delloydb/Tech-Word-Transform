@@ -1,0 +1,73 @@
+<!-- Define the HTML document -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head section of the document -->
+<head>
+  <!-- Set character encoding -->
+  <meta charset="UTF-8">
+  <!-- Viewport for responsive behavior -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Set the page title -->
+  <title>Tutor Dashboard - Bible Study Platform</title>
+  <!-- Link to the external stylesheet -->
+  <link rel="stylesheet" href="dashboard-tutor.css">
+</head>
+
+<!-- Body section begins -->
+<body>
+  <!-- Sidebar menu for navigation -->
+  <aside class="sidebar">
+    <!-- Platform logo or title -->
+    <div class="logo">Bible Study</div>
+    <!-- Tutor dashboard navigation menu -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Dashboard</a></li> <!-- Link to dashboard home -->
+        <li><a href="#">My Courses</a></li> <!-- Link to tutor's courses -->
+        <li><a href="#">Create Content</a></li> <!-- Upload content -->
+        <li><a href="#">Learners</a></li> <!-- View enrolled learners -->
+        <li><a href="#">Logout</a></li> <!-- Logout button -->
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main content area -->
+  <main class="main-content">
+    <!-- Welcome message -->
+    <header>
+      <h1>Welcome, Tutor</h1> <!-- Tutor greeting -->
+      <p>Manage your courses and engage with your learners.</p> <!-- Subheading -->
+    </header>
+
+    <!-- Tutor stats cards -->
+    <section class="stats-section">
+      <div class="card">
+        <h3>Total Courses</h3> <!-- Card title -->
+        <p id="totalCourses">0</p> <!-- Courses count -->
+      </div>
+      <div class="card">
+        <h3>Enrolled Learners</h3> <!-- Card title -->
+        <p id="totalLearners">0</p> <!-- Learners count -->
+      </div>
+      <div class="card">
+        <h3>Quizzes Created</h3> <!-- Card title -->
+        <p id="totalQuizzes">0</p> <!-- Quizzes count -->
+      </div>
+    </section>
+
+    <!-- Tutor course listing section -->
+    <section class="my-courses">
+      <h2>My Courses</h2> <!-- Section title -->
+      <ul id="courseList"> <!-- List of courses created by tutor -->
+        <!-- Filled via JavaScript -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Link to external JavaScript file -->
+  <script src="dashboard-tutor.js"></script>
+</body>
+</html>
+<!-- End of HTML document -->
+<!-- This HTML document defines the tutor dashboard for the Bible Study platform, including a sidebar for navigation, a main content area with welcome message, stats cards, and a list of courses created by the tutor. The layout is styled using an external CSS file and functionality is provided by an external JavaScript file. -->

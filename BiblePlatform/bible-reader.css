@@ -1,0 +1,56 @@
+/* Style for entire body */
+body {
+  font-family: Arial, sans-serif; /* Use modern clean font */
+  background: #f4f4f4; /* Light background color */
+  margin: 0; /* Remove default margin */
+  padding: 1rem; /* Add padding */
+}
+
+/* Main container style */
+.reader-container {
+  max-width: 900px; /* Set max width */
+  margin: auto; /* Center horizontally */
+  background: #fff; /* White background */
+  padding: 2rem; /* Inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow */
+}
+
+/* Section for selecting version/book/chapter */
+.controls {
+  display: flex; /* Arrange horizontally */
+  gap: 0.5rem; /* Add spacing between elements */
+  margin-bottom: 1rem; /* Space below controls */
+}
+
+/* Verse block style */
+.verse {
+  padding: 0.75rem; /* Inner space */
+  border-bottom: 1px solid #ddd; /* Line between verses */
+  position: relative; /* Allows absolute positioned buttons inside */
+}
+
+/* Highlighted verse style */
+.highlighted {
+  background-color: #fffacc; /* Light yellow highlight */
+}
+
+/* Buttons inside verses */
+.verse-buttons {
+  position: absolute; /* Positioned inside verse */
+  top: 0.5rem; /* Distance from top */
+  right: 0.5rem; /* Distance from right */
+  display: flex; /* Arrange buttons horizontally */
+  gap: 0.25rem; /* Space between buttons */
+}
+
+/* Style for bookmarks section */
+#bookmarks-section {
+  margin-top: 2rem; /* Space above section */
+}
+
+/* Style for individual bookmark items */
+#bookmarks-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #ccc;
+}

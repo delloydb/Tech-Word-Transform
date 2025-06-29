@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /> <!-- Set character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Make layout responsive -->
+  <title>Bible Reader</title> <!-- Page title -->
+  <link rel="stylesheet" href="bible-reader.css" /> <!-- Link to CSS file -->
+</head>
+<body>
+  <!-- Main container for Bible Reader -->
+  <div class="reader-container">
+    <h1>Bible Reader</h1> <!-- Page heading -->
+
+    <!-- Controls to select Bible version, book, and chapter -->
+    <div class="controls">
+      <select id="version-select">
+        <option value="kjv">KJV</option>
+        <option value="niv">NIV</option>
+      </select>
+
+      <select id="book-select">
+        <!-- Options will be added by JS -->
+      </select>
+
+      <select id="chapter-select">
+        <!-- Options will be added by JS -->
+      </select>
+
+      <button id="load-btn">Load Chapter</button> <!-- Button to load the selected chapter -->
+    </div>
+
+    <!-- Display area for the Bible text -->
+    <div id="chapter-display">
+      <!-- Chapter content will be inserted here -->
+    </div>
+
+    <!-- Section to show saved bookmarks -->
+    <section id="bookmarks-section">
+      <h2>Bookmarked Verses</h2>
+      <ul id="bookmarks-list"></ul> <!-- Bookmarked verses will be listed here -->
+    </section>
+  </div>
+
+  <script src="bible-reader.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>

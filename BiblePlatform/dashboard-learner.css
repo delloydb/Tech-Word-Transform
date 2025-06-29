@@ -1,0 +1,99 @@
+/* Apply global box model and remove default spacing */
+* {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Border included in width/height */
+}
+
+/* Set default font and body background */
+body {
+  font-family: 'Segoe UI', sans-serif; /* Clean font */
+  display: flex; /* Use flexbox for layout */
+  background-color: #f4f7fb; /* Light background */
+}
+
+/* Style the sidebar */
+.sidebar {
+  width: 250px; /* Fixed sidebar width */
+  height: 100vh; /* Full viewport height */
+  background-color: #0b5394; /* Blue background */
+  color: white; /* White text */
+  padding: 2rem 1rem; /* Inner padding */
+}
+
+/* Logo style inside sidebar */
+.sidebar .logo {
+  font-size: 1.5rem; /* Larger font */
+  font-weight: bold; /* Bold logo text */
+  margin-bottom: 2rem; /* Space below logo */
+}
+
+/* Navigation menu styling */
+.menu ul {
+  list-style: none; /* Remove bullet points */
+}
+
+/* Menu links */
+.menu li a {
+  display: block; /* Make entire line clickable */
+  padding: 0.7rem 1rem; /* Padding inside links */
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  margin-bottom: 1rem; /* Space between links */
+  border-radius: 6px; /* Rounded corners */
+  transition: background 0.3s; /* Smooth hover */
+}
+
+/* Highlight on hover */
+.menu li a:hover {
+  background-color: #073763; /* Darker blue on hover */
+}
+
+/* Main content area next to sidebar */
+.main-content {
+  flex-grow: 1; /* Take remaining horizontal space */
+  padding: 2rem; /* Spacing around content */
+}
+
+/* Header section of dashboard */
+header {
+  margin-bottom: 2rem; /* Space below header */
+}
+
+/* Progress card container */
+.progress-section {
+  display: flex; /* Arrange cards horizontally */
+  gap: 2rem; /* Space between cards */
+  margin-bottom: 2rem; /* Space below section */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Individual card style */
+.card {
+  background-color: white; /* White background */
+  padding: 1.5rem; /* Inner spacing */
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06); /* Subtle shadow */
+  flex: 1 1 200px; /* Grow/shrink/flex-basis */
+  text-align: center; /* Center text */
+}
+
+/* Enrolled courses list section */
+.enrolled-courses {
+  background-color: white; /* White background */
+  padding: 1.5rem; /* Padding around content */
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06); /* Subtle shadow */
+}
+
+/* Course list items */
+.enrolled-courses ul {
+  list-style: none; /* Remove bullets */
+  margin-top: 1rem; /* Space above list */
+}
+
+.enrolled-courses li {
+  padding: 0.75rem 1rem; /* Padding inside list items */
+  border-bottom: 1px solid #eee; /* Light divider */
+  font-size: 1rem; /* Font size */
+}

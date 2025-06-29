@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Content - Bible Study Platform</title>
+  <link rel="stylesheet" href="spiritual-content.css" />
+  <script defer src="spiritual-content.js"></script>
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR (unchanged) -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a href="index.html" class="logo-link">BibleStudy</a>
+      </div>
+      <ul class="navbar-links" id="navbar-links">
+        <li><a href="#" target="_blank">Bible Read</a></li>
+        <li><a href="course.html" target="_blank">Courses</a></li>
+        <li><a href="/Community/community-tranform.html" target="_blank">Community</a></li>
+        <li><a href="donation.html" target="_blank">Donate</a></li>
+        <li><a href="login.html" target="_blank">Login</a></li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="course-container">
+    <header class="course-header">
+      <h1 id="lessonTitle">Spiritual Gifts: Introduction</h1>
+      <p class="tutor">By Pastor John Doe</p>
+    </header>
+
+    <div class="lesson-video">
+      <iframe src="https://www.youtube.com/embed/sw_kc81wO0Q" frameborder="0" allowfullscreen title="Lesson Video"></iframe>
+    </div>
+
+    <section class="lesson-text">
+      <h2>Lessons Summary</h2>
+      <p>This lesson introduces the foundational principles of faith, looking at scriptures and examples that teach trust in God. <br> what it is, why it matters, and how it differs from mere belief or optimism.</p>
+      <h2>Course Overview</h2>
+      <p>This course helps learners discover the gifts God has given to every believer through the Holy Spirit. It explores the diversity, unity, and purpose of spiritual gifts, how to identify them, and how they empower the Church to function effectively.</p>
+    </section>
+
+    <section class="downloads">
+      <h3>Download Materials</h3>
+      <a href="assets/lesson1-notes.pdf" download>Download Lesson Notes (PDF)</a>
+    </section>
+
+    <section class="lesson-pages">
+      <h3>Lesson Pages</h3>
+      <div class="lesson-links">
+        <a href="/lessons/spiritual-lesson1.html">Lesson Page 1</a>
+        <a href="/lessons/spiritual-lesson2.html">Lesson Page 2</a>
+        <a href="/lessons/spiritual-lesson3.html">Lesson Page 3</a>
+      </div>
+    </section>
+
+    <section class="progress">
+      <h3>Lesson Progress</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </section>
+
+    <nav class="lesson-navigation">
+      <button class="nav-btn" onclick="goToHome()">&larr; Back Home</button>
+      <button class="nav-btn" onclick="goToNextLesson()">Next Lesson &rarr;</button>
+    </nav>
+
+  </main>
+
+  <!-- FOOTER (unchanged) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-links-group">
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Support Center</h4>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Help Desk</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Live Chat</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li>Email: support@biblestudy.org</li>
+            <li>Phone: +254 700 123 456</li>
+            <li>Location: Nairobi, Kenya</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Follow Us</h4>
+          <ul class="social-icons">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a>Facebook</li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a>Twitter</li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a>Instagram</li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a>YouTube</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-newsletter">
+        <h4>Stay Updated</h4>
+        <p>Subscribe to receive the latest Bible studies and community updates.</p>
+        <form class="newsletter-form">
+          <input type="email" id="newsletter-email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 BibleStudy Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

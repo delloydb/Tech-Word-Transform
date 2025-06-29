@@ -1,0 +1,99 @@
+/* Reset margin, padding, and enable box-sizing */
+* {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Set base font and layout for body */
+body {
+  font-family: 'Segoe UI', sans-serif; /* Use clean font */
+  display: flex; /* Use flex layout */
+  background-color: #f2f5fa; /* Light background */
+}
+
+/* Style for the sidebar */
+.sidebar {
+  width: 240px; /* Fixed width */
+  background-color: #004080; /* Navy blue background */
+  color: white; /* White text */
+  height: 100vh; /* Full height */
+  padding: 2rem 1rem; /* Space inside */
+}
+
+/* Logo area inside sidebar */
+.logo {
+  font-size: 1.6rem; /* Large text */
+  font-weight: bold; /* Bold logo */
+  margin-bottom: 2rem; /* Space below logo */
+}
+
+/* Navigation menu */
+.menu ul {
+  list-style: none; /* Remove bullet points */
+}
+
+.menu li a {
+  display: block; /* Full-width clickable link */
+  color: white; /* Text color */
+  padding: 0.75rem 1rem; /* Inner padding */
+  text-decoration: none; /* No underline */
+  margin-bottom: 1rem; /* Space between items */
+  border-radius: 6px; /* Rounded corners */
+  transition: background 0.3s ease; /* Smooth hover */
+}
+
+/* Hover effect for navigation links */
+.menu li a:hover {
+  background-color: #002b5c; /* Darker blue */
+}
+
+/* Main content area next to sidebar */
+.main-content {
+  flex: 1; /* Take up remaining space */
+  padding: 2rem; /* Inner padding */
+}
+
+/* Page header section */
+header {
+  margin-bottom: 2rem; /* Space below header */
+}
+
+/* Stats card section layout */
+.stats-section {
+  display: flex; /* Horizontal layout */
+  gap: 2rem; /* Space between cards */
+  margin-bottom: 2rem; /* Bottom spacing */
+  flex-wrap: wrap; /* Wrap on small screens */
+}
+
+/* Style for individual cards */
+.card {
+  background-color: white; /* White background */
+  padding: 1.5rem; /* Inner padding */
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Shadow effect */
+  flex: 1 1 200px; /* Flex sizing */
+  text-align: center; /* Center text */
+}
+
+/* Tutor course listing section */
+.my-courses {
+  background-color: white; /* Background color */
+  padding: 1.5rem; /* Inner padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Shadow */
+}
+
+/* Unordered list style for courses */
+.my-courses ul {
+  list-style: none; /* Remove bullets */
+  margin-top: 1rem; /* Top spacing */
+}
+
+/* Style each list item */
+.my-courses li {
+  padding: 0.75rem 1rem; /* Inner padding */
+  border-bottom: 1px solid #eee; /* Divider */
+  font-size: 1rem; /* Font size */
+}

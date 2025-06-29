@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Courses - Bible Study Platform</title>
+  <link rel="stylesheet" href="course.css" />
+</head>
+<body>
+<!--  START: HEADER / NAVIGATION BAR  -->
+<header class="site-header">
+  <nav class="navbar">
+    
+    <!-- Logo area linking to homepage -->
+    <div class="navbar-logo">
+      <a href="index.html" class="logo-link">BibleStudy</a>
+    </div>
+
+    <!-- Navigation links (desktop + mobile) -->
+    <ul class="navbar-links" id="navbar-links">
+      <li><a href="bible-reader.html" target="_blank">Bible Read</a></li>
+      <li><a href="/Community/community-tranform.html" target="_blank">Community</a></li>
+      <li><a href="donation.html" target="_blank">Donate</a></li>
+      <li><a href="login.html" target="_blank">Login</a></li>
+    </ul>
+
+    <!-- Hamburger menu for mobile -->
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  </nav>
+</header>
+<!--  END: HEADER / NAVIGATION BAR  -->
+
+  <!-- Main Content -->
+  <main class="courses-wrapper">
+    <h1>Explore Bible Study Courses</h1>
+
+    <!-- Search & Filter Controls -->
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search courses..." />
+      <select class="try" id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="advanced">Advanced</option>
+      </select>
+    </div>
+
+    <!-- Courses Grid -->
+    <section id="courseList" class="course-list">
+      <!-- Cards will be injected via JavaScript -->
+    </section>
+  </main>
+
+<!-- Testimonial Carousel -->
+<div class="testimonial-carousel">
+  <div class="carousel-track">
+    <!-- Slide 1 -->
+    <div class="testimonial-card">
+      <p class="testimonial-quote">“This platform helped me rediscover the beauty of scripture in a whole new way.”</p>
+      <div class="testimonial-author">
+        <img src="/images/test1.jpg" alt="Sarah M." class="testimonial-avatar" />
+        <div>
+          <strong>Sarah M.</strong>
+          <span>Beginner Student</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="testimonial-card">
+      <p class="testimonial-quote">“The course on Revelation opened my eyes to God’s ultimate plan for mankind.”</p>
+      <div class="testimonial-author">
+        <img src="/images/test2.jpg" alt="John K." class="testimonial-avatar" />
+        <div>
+          <strong>John K.</strong>
+          <span>Advanced Learner</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="testimonial-card">
+      <p class="testimonial-quote">“I’ve grown in faith, community, and understanding through these studies.”</p>
+      <div class="testimonial-author">
+        <img src="/images/test3.jpg" alt="Grace W." class="testimonial-avatar" />
+        <div>
+          <strong>Grace W.</strong>
+          <span>Intermediate Believer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Submit Your Testimony -->
+<section class="submit-testimonial">
+  <h3>Share Your Testimony</h3>
+  <form id="testimonialForm">
+    <input type="text" placeholder="Your name" required />
+    <input type="text" placeholder="Your role (e.g., Beginner Student)" required />
+    <textarea placeholder="Your testimony..." rows="4" required></textarea>
+    <button type="submit">Submit</button>
+    <p id="submissionMessage" class="hidden">Thank you for sharing!</p>
+  </form>
+</section>
+
+  
+<!-- ========================== -->
+<!--         FOOTER          -->
+<!-- ========================== -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Grouped Links Container -->
+    <div class="footer-links-group">
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html" target="_blank">Home</a></li>
+          <li><a href="aboutstudy.html" target="_blank">About</a></li>
+          <li><a href="course-content.html" target="_blank">Courses</a></li>
+          <li><a href="/Community/community-tranform.html" target="_blank">Community</a></li>
+        </ul>
+      </div>
+
+      <!-- Support Center -->
+      <div class="footer-column">
+        <h4>Support Center</h4>
+        <ul>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Help Desk</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Live Chat</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: support@biblestudy.org</li>
+          <li>Phone: +254 700 123 456</li>
+          <li>Location: Nairobi, Kenya</li>
+        </ul>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <ul class="social-icons">
+          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>Facebook</li>
+          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>Twitter</li>
+          <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>Instagram</li>
+          <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>YouTube</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-newsletter">
+      <h4>Stay Updated</h4>
+      <p>Subscribe to receive the latest Bible studies and community updates.</p>
+      <form class="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 BibleStudy Platform. All rights reserved.</p>
+  </div>
+</footer>
+  <script src="course.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* === RESET STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BODY STYLING === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e0f2fe, #f0f9ff);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === QUIZ CONTAINER === */
+.quiz-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* === HEADER === */
+.quiz-container h1 {
+  font-size: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* === QUESTION BLOCKS === */
+.question-block {
+  margin-bottom: 1.5rem;
+}
+
+.question-block p {
+  font-size: 1.1rem;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.question-block label {
+  display: block;
+  font-size: 1rem;
+  padding: 0.4rem 0.75rem;
+  background-color: #f1f5f9;
+  margin-bottom: 0.4rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.question-block input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+.question-block label:hover {
+  background-color: #e0e7ff;
+}
+
+/* === BUTTON STYLES === */
+.navigation-buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.navigation-buttons button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-buttons button:hover {
+  background-color: #1d4ed8;
+}
+
+.navigation-buttons button#homeButton {
+  background-color: #10b981;
+}
+
+.navigation-buttons button#homeButton:hover {
+  background-color: #059669;
+}
+
+/* === RESULTS SECTION === */
+#result {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  text-align: center;
+}
+
+/* === RESPONSIVENESS === */
+@media (max-width: 600px) {
+  .navigation-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navigation-buttons button {
+    width: 100%;
+  }
+}

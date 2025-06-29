@@ -1,0 +1,107 @@
+/* Reset default margin, padding, and box model */
+* {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding in width and height */
+}
+
+/* Apply font and layout rules to body */
+body {
+  font-family: 'Segoe UI', sans-serif; /* Clean sans-serif font */
+  display: flex; /* Horizontal flex layout */
+  background-color: #f9fbfe; /* Light neutral background */
+}
+
+/* Style for the fixed sidebar */
+.sidebar {
+  width: 240px; /* Fixed sidebar width */
+  background-color: #1e2e50; /* Dark blue background */
+  color: white; /* Light text */
+  height: 100vh; /* Full viewport height */
+  padding: 2rem 1rem; /* Inner spacing */
+}
+
+/* Style for the logo section inside sidebar */
+.logo {
+  font-size: 1.8rem; /* Larger font size */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 2rem; /* Space below logo */
+}
+
+/* Navigation list inside sidebar */
+.menu ul {
+  list-style: none; /* Remove bullets */
+}
+
+/* Style each link in the menu */
+.menu li a {
+  display: block; /* Make link full-width */
+  color: white; /* Light text color */
+  padding: 0.75rem 1rem; /* Padding around text */
+  text-decoration: none; /* Remove underline */
+  margin-bottom: 1rem; /* Space between links */
+  border-radius: 6px; /* Rounded corners */
+  transition: background 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for sidebar links */
+.menu li a:hover {
+  background-color: #13203b; /* Darker background on hover */
+}
+
+/* Style for the main content section */
+.main-content {
+  flex: 1; /* Take up remaining width */
+  padding: 2rem; /* Padding inside main area */
+}
+
+/* Header section inside main content */
+header {
+  margin-bottom: 2rem; /* Space below header */
+}
+
+/* Stats section uses a flex layout */
+.stats-section {
+  display: flex; /* Arrange cards side by side */
+  gap: 2rem; /* Space between cards */
+  margin-bottom: 2rem; /* Space below cards */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* Individual card styles */
+.card {
+  background-color: white; /* Card background */
+  padding: 1.5rem; /* Inner padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+  flex: 1 1 220px; /* Card width responsive */
+  text-align: center; /* Center content */
+}
+
+/* Style for user moderation section */
+.moderation-queue {
+  background-color: white; /* Background color */
+  padding: 1.5rem; /* Inner padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+}
+
+/* Style for unordered list of new users */
+.moderation-queue ul {
+  list-style: none; /* Remove default bullets */
+  margin-top: 1rem; /* Top spacing */
+}
+
+/* Style for each user in the list */
+.moderation-queue li {
+  padding: 0.75rem 1rem; /* Padding for each item */
+  border-bottom: 1px solid #eee; /* Divider line */
+  font-size: 1rem; /* Font size */
+}
+/* Style for the course management section */
+.course-management {
+  background-color: white; /* White background */
+  padding: 1.5rem; /* Inner padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* Subtle shadow */
+}

@@ -1,0 +1,246 @@
+/* Reset all default margins and padding */
+*, *::before, *::after {
+  margin: 0; /* Remove all margins */
+  padding: 0; /* Remove all padding */
+  box-sizing: border-box; /* Include padding in element width */
+}
+
+/* Body styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif; /* Use system fonts */
+  background-color: #f4f7fb; /* Light gray background */
+  color: #333; /* Dark gray text */
+  line-height: 1.6; /* Space between lines */
+}
+
+/* Navigation bar */
+.navbar {
+  display: flex; /* Horizontal layout */
+  justify-content: space-between; /* Space between logo and links */
+  align-items: center; /* Center vertically */
+  padding: 1rem 2rem; /* 16px top/bottom, 32px left/right */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Logo text */
+.logo {
+  font-size: 1.5rem; /* 24px font */
+  font-weight: bold; /* Bold text */
+  color: #0b5394; /* Blue color */
+}
+
+/* Navigation links container */
+.nav-links {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Horizontal layout */
+  gap: 1.5rem; /* Space between links */
+}
+
+/* Navigation links */
+.nav-links li a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Dark gray text */
+  font-weight: 500; /* Medium bold */
+  transition: color 0.2s ease; /* Smooth color change */
+}
+
+/* Navigation hover states */
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #0b5394; /* Blue on hover */
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Main content area */
+.main-content {
+  min-height: calc(100vh - 72px); /* Full height minus navbar */
+  display: flex; /* Flex layout */
+  align-items: center; /* Center vertically */
+  padding: 2rem 0; /* 32px top/bottom padding */
+}
+
+/* Login box */
+.login-container {
+  max-width: 420px; /* Maximum width */
+  width: 90%; /* 90% width on mobile */
+  margin: 0 auto; /* Center horizontally */
+  background-color: #ffffff; /* White background */
+  padding: 2.5rem; /* 40px inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Shadow */
+}
+
+/* Login title */
+.login-title {
+  margin-bottom: 1.5rem; /* Space below title */
+  color: #0b5394; /* Blue text */
+  font-size: 1.75rem; /* 28px font */
+  text-align: center; /* Center text */
+}
+
+/* Form input groups */
+.form-group {
+  margin-bottom: 1.5rem; /* Space between inputs */
+}
+
+/* Form labels */
+.form-group label {
+  display: block; /* Make label take full width */
+  margin-bottom: 0.5rem; /* Space below label */
+  font-weight: 500; /* Medium bold */
+  color: #555; /* Gray text */
+}
+
+/* Input fields */
+.form-group input,
+.form-group select {
+  width: 100%; /* Full width */
+  padding: 0.75rem 1rem; /* 12px top/bottom, 16px left/right */
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 5px; /* Slightly rounded */
+  font-size: 1rem; /* 16px font */
+  transition: border-color 0.3s ease; /* Smooth border change */
+}
+
+/* Input focus states */
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0b5394; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 2px rgba(11, 83, 148, 0.2); /* Blue glow */
+}
+
+/* Base button */
+.btn {
+  display: inline-block; /* Allow padding */
+  padding: 0.75rem 1.5rem; /* 12px top/bottom, 24px left/right */
+  border: none; /* No border */
+  border-radius: 5px; /* Slightly rounded */
+  font-size: 1rem; /* 16px font */
+  font-weight: 500; /* Medium bold */
+  cursor: pointer; /* Pointer cursor */
+  transition: all 0.3s ease; /* Smooth changes */
+  text-align: center; /* Center text */
+}
+
+/* Primary button */
+.btn-primary {
+  background-color: #0b5394; /* Blue background */
+  color: #fff; /* White text */
+  width: 100%; /* Full width */
+}
+
+/* Button hover states */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #08457a; /* Darker blue */
+  box-shadow: 0 2px 8px rgba(11, 83, 148, 0.3); /* Shadow */
+}
+
+/* Divider line */
+.divider {
+  display: flex; /* Horizontal layout */
+  align-items: center; /* Center vertically */
+  margin: 1.5rem 0; /* 24px top/bottom */
+}
+
+/* Divider line parts */
+.divider-line {
+  flex: 1; /* Take available space */
+  height: 1px; /* 1px tall */
+  background-color: #ddd; /* Light gray */
+}
+
+/* Divider text */
+.divider-text {
+  padding: 0 1rem; /* 16px left/right */
+  color: #777; /* Medium gray text */
+  font-size: 0.875rem; /* 14px font */
+}
+
+/* Google Sign-In Container */
+.google-signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+/* Google Sign-In button */
+.g_id_signin {
+  width: 100% !important;
+  max-width: 400px;
+  height: 46px !important;
+}
+
+/* Inner button container */
+.g_id_signin > div {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Google iframe */
+.g_id_signin > div > iframe {
+  width: 100% !important;
+  height: 46px !important;
+  min-width: 0 !important;
+  border-radius: 5px; /* Optional: match form input rounding */
+}
+
+/* Mobile adjustment */
+@media (max-width: 480px) {
+  .g_id_signin,
+  .g_id_signin > div > iframe {
+    height: 44px !important;
+  }
+}
+
+
+/* Helper links */
+.signup-link,
+.forgot-password {
+  margin-top: 1rem; /* 16px top margin */
+  font-size: 0.9rem; /* 14.4px font */
+  text-align: center; /* Center text */
+  color: #666; /* Medium gray */
+}
+
+/* Helper link text */
+.signup-link a,
+.forgot-password a {
+  color: #0b5394; /* Blue text */
+  text-decoration: none; /* No underline */
+  font-weight: 500; /* Medium bold */
+}
+
+/* Link hover states */
+.signup-link a:hover,
+.forgot-password a:hover,
+.signup-link a:focus,
+.forgot-password a:focus {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 1rem; /* 16px all sides */
+  }
+  
+  .nav-links {
+    gap: 1rem; /* 16px between links */
+  }
+  
+  .login-container {
+    padding: 1.5rem; /* 24px all sides */
+  }
+  
+  .login-title {
+    font-size: 1.5rem; /* 24px font */
+  }
+}

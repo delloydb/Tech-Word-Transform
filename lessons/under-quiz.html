@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible Study Quiz</title>
+  <link rel="stylesheet" href="under-quiz.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Lesson Quiz</h1>
+    <form id="quizForm">
+      <!-- Question 1 -->
+      <div class="question-block">
+        <p>1. On which day did God create light?</p>
+        <label><input type="radio" name="q1" value="a"> First day</label>
+        <label><input type="radio" name="q1" value="b"> Third day</label>
+        <label><input type="radio" name="q1" value="c"> Fifth day</label>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-block">
+        <p>2. What did God create on the sixth day?</p>
+        <label><input type="radio" name="q2" value="a"> Birds and fish</label>
+        <label><input type="radio" name="q2" value="b"> Land animals and humans</label>
+        <label><input type="radio" name="q2" value="c"> The heavens</label>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-block">
+        <p>3. What was God's response to His creation at the end of each day?</p>
+        <label><input type="radio" name="q3" value="a"> He saw it was good</label>
+        <label><input type="radio" name="q3" value="b"> He changed it</label>
+        <label><input type="radio" name="q3" value="c"> He rested</label>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-block">
+        <p>4. What did God create on the second day?</p>
+        <label><input type="radio" name="q4" value="a"> Sun and moon</label>
+        <label><input type="radio" name="q4" value="b"> Animals</label>
+        <label><input type="radio" name="q4" value="c"> Sky and atmosphere</label>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question-block">
+        <p>5. How many days did God take to create the world?</p>
+        <label><input type="radio" name="q5" value="a"> 5</label>
+        <label><input type="radio" name="q5" value="b"> 6</label>
+        <label><input type="radio" name="q5" value="c"> 7</label>
+      </div>
+
+      <!-- Question 6 -->
+      <div class="question-block">
+        <p>6. What did God do on the seventh day?</p>
+        <label><input type="radio" name="q6" value="a"> Continued creating</label>
+        <label><input type="radio" name="q6" value="b"> Started again</label>
+        <label><input type="radio" name="q6" value="c"> Rested</label>
+      </div>
+
+      <!-- Question 7 -->
+      <div class="question-block">
+        <p>7. What was the first thing God created?</p>
+        <label><input type="radio" name="q7" value="a"> Light</label>
+        <label><input type="radio" name="q7" value="b"> Earth</label>
+        <label><input type="radio" name="q7" value="c"> Animals</label>
+      </div>
+
+      <!-- Question 8 -->
+      <div class="question-block">
+        <p>8. Which book of the Bible describes creation?</p>
+        <label><input type="radio" name="q8" value="a"> Exodus</label>
+        <label><input type="radio" name="q8" value="b"> Genesis</label>
+        <label><input type="radio" name="q8" value="c"> Psalms</label>
+      </div>
+
+      <!-- Question 9 -->
+      <div class="question-block">
+        <p>9. Who was created first according to Genesis?</p>
+        <label><input type="radio" name="q9" value="a"> Eve</label>
+        <label><input type="radio" name="q9" value="b"> Serpent</label>
+        <label><input type="radio" name="q9" value="c"> Adam</label>
+      </div>
+
+      <!-- Question 10 -->
+      <div class="question-block">
+        <p>10. What did God use to form man?</p>
+        <label><input type="radio" name="q10" value="a"> Dust</label>
+        <label><input type="radio" name="q10" value="b"> Water</label>
+        <label><input type="radio" name="q10" value="c"> Clay</label>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="navigation-buttons">
+        <button type="button" id="prevBtn">Previous</button>
+        <button type="button" id="nextBtn">Next</button>
+        <button type="submit" id="submitBtn">Show Results</button>
+        <button type="button" id="homeButton">Return to Home</button>
+      </div>
+    </form>
+
+    <!-- Result Display -->
+    <div id="result"></div>
+  </div>
+
+  <script src="under-quiz.js"></script>
+</body>
+</html>

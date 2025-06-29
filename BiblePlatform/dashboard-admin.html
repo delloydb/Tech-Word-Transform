@@ -1,0 +1,75 @@
+<!-- Define the structure of the HTML document -->
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head section contains metadata and links -->
+<head>
+  <!-- Set character encoding to UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- Set viewport for responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title for the admin dashboard page -->
+  <title>Admin Dashboard - Bible Study Platform</title>
+  <!-- Link to the external CSS stylesheet -->
+  <link rel="stylesheet" href="dashboard-admin.css">
+</head>
+
+<!-- Start of the body section -->
+<body>
+  <!-- Sidebar for admin navigation -->
+  <aside class="sidebar">
+    <!-- Platform logo text -->
+    <div class="logo">Bible Admin</div>
+
+    <!-- Navigation links for admin actions -->
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Dashboard</a></li> <!-- Link to dashboard home -->
+        <li><a href="#">Manage Users</a></li> <!-- Manage platform users -->
+        <li><a href="#">Manage Courses</a></li> <!-- Administer all courses -->
+        <li><a href="#">View Donations</a></li> <!-- Access donations log -->
+        <li><a href="#">Settings</a></li> <!-- Admin settings -->
+        <li><a href="#">Logout</a></li> <!-- Logout button -->
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main content area for statistics and controls -->
+  <main class="main-content">
+    <!-- Page title -->
+    <header>
+      <h1>Welcome, Admin</h1> <!-- Heading for the admin dashboard -->
+      <p>Platform statistics and controls are listed below.</p> <!-- Brief subtext -->
+    </header>
+
+    <!-- Section for system overview statistics -->
+    <section class="stats-section">
+      <div class="card">
+        <h3>Total Users</h3> <!-- Card label -->
+        <p id="totalUsers">0</p> <!-- Number populated by JS -->
+      </div>
+      <div class="card">
+        <h3>Active Courses</h3> <!-- Card label -->
+        <p id="activeCourses">0</p> <!-- Number populated by JS -->
+      </div>
+      <div class="card">
+        <h3>Donations (KSH)</h3> <!-- Card label -->
+        <p id="totalDonations">0</p> <!-- Number populated by JS -->
+      </div>
+    </section>
+
+    <!-- Section for pending moderation items -->
+    <section class="moderation-queue">
+      <h2>Recent User Registrations</h2> <!-- Section heading -->
+      <ul id="userList"> <!-- List of new users to moderate -->
+        <!-- Dynamic content added via JS -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Link to external JavaScript file -->
+  <script src="dashboard-admin.js"></script>
+</body>
+</html>
+<!-- End of the HTML document -->
+<!-- This HTML document serves as the admin dashboard for the Bible Study Platform, providing an overview of platform statistics and user management features. -->
