@@ -1,162 +1,204 @@
-// Wait until the full page DOM is loaded before running any script
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * BibleStudy Platform - Main JavaScript File
+ * Contains all interactive functionality for the website
+ */
 
-  // ===============================
-  // 1. Mobile Navigation Toggle
-  // ===============================
+// DOM Ready Function
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize all functionality
+  initThemeToggle();
+  initMobileMenu();
+  initScrollToTop();
+  initFAQAccordion();
+  initNewsletterForm();
+  initCountUpAnimation();
+});
 
-  // Select the hamburger menu button using its ID
-  const menuToggle = document.getElementById('menu-toggle');
-
-  // Select the navigation links container
-  const navLinks = document.querySelector('.nav-links');
-
-  // Add click event to toggle mobile nav visibility
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show'); // Show/hide nav menu
+/**
+ * Theme Toggle Functionality
+ * Switches between light and dark theme and saves preference
+ */
+function initThemeToggle() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+  
+  // Check for saved theme preference or use preferred color scheme
+  const savedTheme = localStorage.getItem('theme') || 
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  
+  // Apply saved theme
+  htmlElement.setAttribute('data-theme', savedTheme);
+  
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
   });
+}
 
-
-  // ===============================
-  // 2. Hero Section Button Actions
-  // ===============================
-
-  // 'Get Started' button
-  const getStartedBtn = document.getElementById('get-started');
-
-  // 'Explore Courses' button
-  const exploreCoursesBtn = document.getElementById('explore-courses');
-
-  // Redirect to signup page when Get Started button is clicked
-  if (getStartedBtn) {
-    getStartedBtn.addEventListener('click', () => {
-      window.location.href = 'signup.html'; // Navigate to signup
+/**
+ * Mobile Menu Toggle Functionality
+ * Handles the responsive navigation menu
+ */
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarLinks = document.getElementById('navbar-links');
+  
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    
+    menuToggle.setAttribute('aria-expanded', !isExpanded);
+    navbarLinks.classList.toggle('active');
+    
+    // Toggle body scroll when menu is open
+    document.body.style.overflow = isExpanded ? '' : 'hidden';
+  });
+  
+  // Close menu when clicking on a link
+  navbarLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+      navbarLinks.classList.remove('active');
+      document.body.style.overflow = '';
     });
-  }
+  });
+}
 
-  // Redirect to courses page when Explore Courses button is clicked
-  if (exploreCoursesBtn) {
-    exploreCoursesBtn.addEventListener('click', () => {
-      window.location.href = 'courses.html'; // Navigate to courses
+/**
+ * Scroll to Top Button Functionality
+ * Shows/hides button based on scroll position and handles smooth scrolling
+ */
+function initScrollToTop() {
+  const scrollButton = document.getElementById('scroll-to-top');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      scrollButton.classList.add('visible');
+    } else {
+      scrollButton.classList.remove('visible');
+    }
+  });
+  
+  scrollButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
-  }
+  });
+}
 
-
-  // =====================================
-  // 3. Smooth Scroll for Internal Links
-  // =====================================
-
-  // Select all anchor links that start with '#'
-  const smoothLinks = document.querySelectorAll('a[href^="#"]');
-
-  // Add smooth scroll to each internal anchor link
-  smoothLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent default jump to anchor
-
-      const targetId = link.getAttribute('href').substring(1); // Remove '#' from href
-      const targetSection = document.getElementById(targetId); // Get target section
-
-      if (targetSection) {
-        targetSection.scrollIntoView({
-          behavior: 'smooth', // Smooth scrolling
-          block: 'start' // Align to top
+/**
+ * FAQ Accordion Functionality
+ * Handles the expand/collapse behavior of FAQ items
+ */
+function initFAQAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    
+    question.addEventListener('click', () => {
+      const isExpanded = question.getAttribute('aria-expanded') === 'true';
+      
+      // Toggle the clicked item
+      question.setAttribute('aria-expanded', !isExpanded);
+      item.setAttribute('aria-expanded', !isExpanded);
+      
+      // Close other open items
+      if (!isExpanded) {
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.setAttribute('aria-expanded', 'false');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          }
         });
       }
     });
   });
+}
 
+/**
+ * Newsletter Form Handling
+ * Handles form submission and validation
+ */
+function initNewsletterForm() {
+  const form = document.getElementById('newsletter-form');
+  const emailInput = document.getElementById('newsletter-email');
+  const messageElement = document.getElementById('newsletter-message');
+  
+  if (!form) return;
+  
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Simple email validation
+    const email = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(email)) {
+      showFormMessage(messageElement, 'Please enter a valid email address', 'error');
+      return;
+    }
+    
+    // Simulate form submission
+    showFormMessage(messageElement, 'Thank you for subscribing!', 'success');
+    emailInput.value = '';
+    
+    // In a real implementation, you would send the data to your server here
+    // Example: fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
+  });
+  
+  function showFormMessage(element, message, type) {
+    element.textContent = message;
+    element.style.color = type === 'error' ? 'var(--primary)' : 'var(--secondary)';
+    
+    // Clear message after 5 seconds
+    setTimeout(() => {
+      element.textContent = '';
+    }, 5000);
+  }
+}
 
-  // =========================================
-  // 4. Newsletter Form Validation and Alert
-  // =========================================
-
-  // Select the newsletter form (if present)
-  const newsletterForm = document.getElementById('newsletter-form');
-
-  // If the newsletter form exists, handle submit
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault(); // Prevent form from reloading page
-
-      // Select email input field
-      const emailInput = document.getElementById('email-input');
-
-      // Get the entered email value
-      const email = emailInput.value.trim();
-
-      // Basic validation for email format
-      if (email.length > 5 && email.includes('@') && email.includes('.')) {
-        alert("Thank you for subscribing to our newsletter!"); // Show success message
-        newsletterForm.reset(); // Clear input field
-      } else {
-        alert("Please enter a valid email address."); // Show error message
+/**
+ * Count Up Animation for Stats
+ * Animates numbers counting up when section comes into view
+ */
+function initCountUpAnimation() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  
+  if (!statNumbers.length) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        const countTo = parseInt(target.getAttribute('data-count'));
+        const duration = 2000; // Animation duration in ms
+        const startTime = performance.now();
+        
+        function animateCount(currentTime) {
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / duration, 1);
+          const currentCount = Math.floor(progress * countTo);
+          
+          target.textContent = currentCount.toLocaleString();
+          
+          if (progress < 1) {
+            requestAnimationFrame(animateCount);
+          }
+        }
+        
+        requestAnimationFrame(animateCount);
+        observer.unobserve(target);
       }
     });
-  }
-
-
-  // =============================
-  // 5. Back to Top Button Logic
-  // =============================
-
-  // Select the back to top button if it exists
-  const backToTop = document.getElementById('back-to-top');
-
-  // If the button exists, monitor scroll to toggle its visibility
-  if (backToTop) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('visible'); // Show button after scrolling down
-      } else {
-        backToTop.classList.remove('visible'); // Hide button if near top
-      }
-    });
-
-    // Scroll to top when the button is clicked
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0, // Scroll to the top of the page
-        behavior: 'smooth' // Animate the scroll
-      });
-    });
-  }
-
-
-  // =================================
-  // 6. Simple Modal Popup Controller
-  // =================================
-
-  // Select the modal container
-  const modal = document.getElementById('modal');
-
-  // Select the modal open button (e.g., from hero or footer)
-  const openModalBtn = document.getElementById('open-modal');
-
-  // Select the modal close button (X)
-  const closeModalBtn = document.getElementById('close-modal');
-
-  // If modal and open button exist, open modal on click
-  if (modal && openModalBtn) {
-    openModalBtn.addEventListener('click', () => {
-      modal.style.display = 'block'; // Show modal
-    });
-  }
-
-  // Close modal when X button is clicked
-  if (modal && closeModalBtn) {
-    closeModalBtn.addEventListener('click', () => {
-      modal.style.display = 'none'; // Hide modal
-    });
-  }
-
-  // Also close modal when user clicks outside the modal content
-  if (modal) {
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none'; // Hide modal if clicked outside
-      }
-    });
-  }
-
-});
+  }, { threshold: 0.5 });
+  
+  statNumbers.forEach(number => {
+    observer.observe(number);
+  });
+}
