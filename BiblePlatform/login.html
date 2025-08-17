@@ -1,118 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
-  <!-- Basic Meta Tags -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Login to access Bible Study Platform" />
-
-  <!-- Page Title -->
+  <meta name="description" content="Login to access Bible Study Platform for spiritual growth and biblical learning" />
   <title>Login - Bible Study Platform</title>
-
-  <!-- Favicon (recommended) -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Link to External CSS -->
-  <link rel="stylesheet" href="login.css" />
-
-  <!-- Google Sign-In SDK -->
+  <link rel="stylesheet" href="christian-content.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar" aria-label="Main navigation">
-    <div class="logo">Bible Study</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="/BiblePlatform/course.html">Courses</a></li>
-      <li><a href="donation.html">Donate</a></li>
-    </ul>
-  </nav>
+  <!-- Header with improved semantic structure -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-logo">
+          <a href="index.html" class="logo-link" aria-label="BibleStudy - Go to homepage">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span class="logo-text">BibleStudy</span>
+          </a>
+        </div>
 
-  <!-- Main Content Container -->
+        <ul class="navbar-links" id="navbar-links" role="menubar">
+          <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+          <li role="none"><a href="course.html" role="menuitem">Courses</a></li>
+          <li role="none"><a href="donation.html" role="menuitem">Donate</a></li>
+          <li role="none"><a href="#" class="login-btn active" role="menuitem">Login</a></li>
+        </ul>
+
+        <div class="navbar-utilities">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content area -->
   <main class="main-content">
-    <!-- Login Form Container -->
-    <div class="login-container">
-      <h1 class="login-title">Login to Your Account</h1>
+    <section class="login-section" aria-labelledby="login-heading">
+      <div class="container">
+        <div class="login-card">
+          <h1 id="login-heading">Welcome Back to BibleStudy</h1>
+          <p class="login-subtitle">Sign in to continue your spiritual journey</p>
 
-      <!-- Login Form -->
-      <form id="loginForm" novalidate>
-        <!-- Email Input -->
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required 
-                 aria-required="true" autocomplete="username" />
+          <form id="loginForm" class="login-form" novalidate>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required 
+                    aria-required="true" autocomplete="username"
+                    placeholder="your@email.com">
+              <div class="error-message" id="email-error" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required
+                    aria-required="true" autocomplete="current-password"
+                    placeholder="Enter your password">
+              <div class="error-message" id="password-error" aria-live="polite"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="role">I'm here as a...</label>
+              <select id="role" name="role" required aria-required="true">
+                <option value="">Select your role</option>
+                <option value="learner">Learner (studying the Word)</option>
+                <option value="tutor">Tutor (teaching others)</option>
+                <option value="community">Community Builder</option>
+              </select>
+              <div class="error-message" id="role-error" aria-live="polite"></div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <span>Continue to Account</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </button>
+
+            <div class="divider">
+              <span class="divider-line"></span>
+              <span class="divider-text">or continue with</span>
+              <span class="divider-line"></span>
+            </div>
+
+            <div class="google-signin">
+              <div id="g_id_onload"
+                  data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+                  data-context="signin"
+                  data-ux_mode="popup"
+                  data-callback="handleGoogleSignIn"
+                  data-auto_prompt="false">
+              </div>
+              <div class="g_id_signin"
+                  data-type="standard"
+                  data-size="large"
+                  data-theme="outline"
+                  data-text="continue_with"
+                  data-shape="rectangular"
+                  data-logo_alignment="left"
+                  data-width="350">
+              </div>
+            </div>
+          </form>
+
+          <div class="login-footer">
+            <a href="forgot-password.html" class="text-link">Forgot password?</a>
+            <p>Don't have an account? <a href="signup.html" class="text-link">Create one</a></p>
+          </div>
         </div>
 
-        <!-- Password Input -->
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required
-                 aria-required="true" autocomplete="current-password" />
-        </div>
-
-        <!-- Role/Interest Selection -->
-        <div class="form-group">
-          <label for="role">Select Interest</label>
-          <select id="role" name="role" required aria-required="true">
-            <option value="">Choose an option</option>
-            <option value="learner">Learner</option>
-            <option value="tutor">Tutor</option>
-            <option value="community">Community Builder</option>
-          </select>
-        </div>
-
-        <!-- Login Button -->
-        <button type="submit" class="btn btn-primary">Login</button>
-
-        <!-- Divider for social login options -->
-        <div class="divider">
-          <span class="divider-line"></span>
-          <span class="divider-text">or</span>
-          <span class="divider-line"></span>
-        </div>
-
-        <!-- Google Sign-In Button -->
-<div class="google-signin">
-  <div style="text-align: center;">
-    <div id="g_id_onload"
-         data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
-         data-context="signin"
-         data-ux_mode="popup"
-         data-callback="handleGoogleSignIn"
-         data-auto_prompt="false">
-    </div>
-
-    <div class="g_id_signin"
-         data-type="standard"
-         data-size="large"
-         data-theme="outline"
-         data-text="continue_with"
-         data-shape="rectangular"
-         data-logo_alignment="left"
-         data-width="350">
-    </div>
-  </div>
-</div>
-
-
-        <!-- Forgot Password Link -->
-        <p class="forgot-password">
-          <a href="forgot-password.html" aria-label="Forgot password">Forgot Password?</a>
-        </p>
-
-        <!-- Sign Up Link -->
-        <p class="signup-link">
-          Don't have an account? <a href="signup.html" aria-label="Sign up">Register here</a>
-        </p>
-      </form>
-    </div>
+        <aside class="login-promo">
+          <div class="promo-content">
+            <h2>Deepen Your Faith Journey</h2>
+            <ul class="benefits-list">
+              <li>Access exclusive Bible study courses</li>
+              <li>Join a community of believers</li>
+              <li>Track your spiritual growth</li>
+              <li>Save your study notes and highlights</li>
+            </ul>
+            <div class="scripture-quote">
+              <blockquote>
+                "Your word is a lamp for my feet, a light on my path."
+                <cite>Psalm 119:105</cite>
+              </blockquote>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
   </main>
 
-  <!-- JavaScript File -->
-  <script src="login.js"></script>
-</body>
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
+  <script src="christian-content.js"></script>
+</body>
 </html>
