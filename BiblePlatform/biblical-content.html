@@ -1,132 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Course Content - Bible Study Platform</title>
-  <link rel="stylesheet" href="biblical-content.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biblical Leadership course exploring God's vision for leadership based on Scripture">
+  <title>Biblical Leadership: Introduction - Bible Study Platform</title>
+  <link rel="stylesheet" href="biblical-content.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <script defer src="biblical-content.js"></script>
 </head>
 <body>
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- HEADER / NAVBAR (unchanged) -->
-  <header class="site-header">
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <a href="index.html" class="logo-link">BibleStudy</a>
-      </div>
-      <ul class="navbar-links" id="navbar-links">
-        <li><a href="#" target="_blank">Bible Read</a></li>
-        <li><a href="course.html" target="_blank">Courses</a></li>
-        <li><a href="/Community/community-tranform.html" target="_blank">Community</a></li>
-        <li><a href="donation.html" target="_blank">Donate</a></li>
-        <li><a href="login.html" target="_blank">Login</a></li>
-      </ul>
-      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    </nav>
+  <!-- HEADER: Main navigation and branding -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <!-- Logo and brand name -->
+        <div class="navbar-logo">
+          <a href="#" class="logo-link" aria-label="BibleStudy & Transformation - Go to homepage">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span class="logo-text">BibleStudy</span>
+          </a>
+        </div>
+
+        <!-- Desktop navigation menu -->
+        <ul class="navbar-links" id="navbar-links" role="menubar">
+          <li role="none"><a href="#bible-reading" role="menuitem">Bible Reading</a></li>
+          <li role="none"><a href="#courses-section" role="menuitem">Courses</a></li>
+          <li role="none"><a href="#community" role="menuitem">Community</a></li>
+          <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
+          <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+          <li role="none"><a href="#" class="login-btn" role="menuitem">Login</a></li>
+        </ul>
+
+        <!-- Utility buttons -->
+        <div class="navbar-utilities">
+          <!-- Theme toggle button -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+
+          <!-- Mobile menu toggle -->
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="course-container">
+  <main id="main-content" class="course-container">
+    <!-- Course header section -->
     <header class="course-header">
+      <div class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/courses">Courses</a> / <a href="/courses/leadership">Biblical Leadership</a> / <span aria-current="page">Introduction</span>
+      </div>
       <h1 id="lessonTitle">Biblical Leadership: Introduction</h1>
-      <p class="tutor">By Pastor John Doe</p>
+      <p class="tutor">By <a href="/instructors/john-doe">Pastor John Doe</a></p>
+      <div class="course-meta">
+        <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 45 min</span>
+        <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l9 4 9-4-9-4-9 4z"/><path d="M3 12l9 4 9-4-9-4-9 4z"/><path d="M3 18l9 4 9-4-9-4-9 4z"/></svg> 12 lessons</span>
+        <span class="meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Intermediate</span>
+      </div>
     </header>
 
-    <div class="lesson-video">
-      <iframe src="https://www.youtube.com/embed/sw_kc81wO0Q" frameborder="0" allowfullscreen title="Lesson Video"></iframe>
-    </div>
-
-    <section class="lesson-text">
-      <h2>Lessons Summary</h2>
-      <p>This lesson introduces the foundational principles of faith, looking at scriptures and examples that teach trust in God. <br> what it is, why it matters, and how it differs from mere belief or optimism.</p>
-      <h2>Course Overview</h2>
-      <p>This course explores God’s vision for leadership based on Scripture. It highlights principles, character traits, and examples of faithful leaders in both Old and New Testaments, offering a countercultural model of servant leadership.</p>
-    </section>
-
-    <section class="downloads">
-      <h3>Download Materials</h3>
-      <a href="assets/lesson1-notes.pdf" download>Download Lesson Notes (PDF)</a>
-    </section>
-
-    <section class="lesson-pages">
-      <h3>Lesson Pages</h3>
-      <div class="lesson-links">
-        <a href="/lessons/biblical-lesson1.html">Lesson Page 1</a>
-        <a href="/lessons/biblical-lesson2.html">Lesson Page 2</a>
-        <a href="/lessons/biblical-lesson3.html">Lesson Page 3</a>
+    <!-- Video lesson section -->
+    <section class="lesson-video" aria-labelledby="video-heading">
+      <h2 id="video-heading" class="visually-hidden">Lesson Video</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/sw_kc81wO0Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Biblical Leadership: Introduction Video Lesson"></iframe>
       </div>
     </section>
 
-    <section class="progress">
-      <h3>Lesson Progress</h3>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
+    <!-- Lesson content sections -->
+    <article class="lesson-content">
+      <section class="lesson-summary">
+        <h2>Lesson Summary</h2>
+        <p>This foundational lesson introduces biblical leadership principles through Scripture, examining what godly leadership looks like, why it matters, and how it differs from worldly leadership models. We'll explore:</p>
+        <ul>
+          <li>The biblical definition of leadership</li>
+          <li>Key characteristics of godly leaders</li>
+          <li>Examples from both Old and New Testaments</li>
+          <li>The servant leadership model of Jesus</li>
+        </ul>
+      </section>
+
+      <section class="course-overview">
+        <h2>Course Overview</h2>
+        <p>This 12-part course explores God's vision for leadership based on Scripture. It highlights principles, character traits, and examples of faithful leaders in both Old and New Testaments, offering a countercultural model of servant leadership that transforms communities.</p>
+        
+        <button class="accordion">View Full Course Outline</button>
+        <div class="accordion-content">
+          <ol>
+            <li>Introduction to Biblical Leadership (Current Lesson)</li>
+            <li>The Heart of a Servant Leader</li>
+            <li>Moses: Leading Under Pressure</li>
+            <li>David: Leadership After God's Heart</li>
+            <li>Nehemiah: Visionary Leadership</li>
+            <li>Jesus: The Perfect Leadership Model</li>
+            <li>Paul: Multiplying Leaders</li>
+            <li>Developing Spiritual Authority</li>
+            <li>Leading With Wisdom</li>
+            <li>Building Healthy Teams</li>
+            <li>Navigating Leadership Challenges</li>
+            <li>Leaving a Godly Legacy</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="key-scriptures">
+        <h2>Key Scriptures</h2>
+        <div class="scripture-cards">
+          <div class="scripture-card">
+            <h3>Mark 10:42-45</h3>
+            <p>"Jesus called them together and said, 'You know that those who are regarded as rulers of the Gentiles lord it over them... Not so with you. Instead, whoever wants to become great among you must be your servant...'"</p>
+          </div>
+          <div class="scripture-card">
+            <h3>1 Peter 5:2-3</h3>
+            <p>"Be shepherds of God's flock that is under your care, watching over them—not because you must, but because you are willing, as God wants you to be; not pursuing dishonest gain, but eager to serve..."</p>
+          </div>
+          <div class="scripture-card">
+            <h3>Proverbs 29:2</h3>
+            <p>"When the righteous thrive, the people rejoice; when the wicked rule, the people groan."</p>
+          </div>
+        </div>
+      </section>
+    </article>
+
+    <!-- Resources section -->
+    <aside class="resources-sidebar" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Resources</h2>
+      
+      <section class="downloads">
+        <h3>Download Materials</h3>
+        <ul class="download-list">
+          <li><a href="assets/lesson1-notes.pdf" download class="download-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Lesson Notes (PDF)</a></li>
+          <li><a href="assets/leadership-study-guide.pdf" download class="download-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Complete Study Guide</a></li>
+          <li><a href="assets/scripture-cards.pdf" download class="download-link"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Scripture Memory Cards</a></li>
+        </ul>
+      </section>
+
+      <section class="lesson-pages">
+        <h3>Course Lessons</h3>
+        <nav aria-label="Course lessons navigation">
+          <ol class="lesson-links">
+            <li class="current"><a href="/lessons/biblical-lesson1.html" aria-current="page">1. Introduction</a></li>
+            <li><a href="/lessons/biblical-lesson2.html">2. The Heart of a Servant Leader</a></li>
+            <li><a href="/lessons/biblical-lesson3.html">3. Moses: Leading Under Pressure</a></li>
+            <li><a href="/lessons/biblical-lesson4.html">4. David: Leadership After God's Heart</a></li>
+            <li><a href="/lessons/biblical-lesson5.html">5. Nehemiah: Visionary Leadership</a></li>
+            <li class="more-link"><a href="/courses/leadership">View all 12 lessons →</a></li>
+          </ol>
+        </nav>
+      </section>
+
+      <section class="progress-section">
+        <h3>Your Progress</h3>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <span class="progress-text">25% complete</span>
+        </div>
+        <button class="btn btn-secondary mark-complete">Mark as Complete</button>
+      </section>
+    </aside>
+
+    <!-- Discussion section -->
+    <section class="discussion" aria-labelledby="discussion-heading">
+      <h2 id="discussion-heading">Community Discussion</h2>
+      <div class="discussion-content">
+        <div class="discussion-prompt">
+          <h3>Reflection Question</h3>
+          <p>How does Jesus' model of servant leadership in Mark 10:42-45 challenge your current understanding or practice of leadership?</p>
+        </div>
+        <form class="discussion-form">
+          <label for="comment" class="visually-hidden">Your response</label>
+          <textarea id="comment" placeholder="Share your thoughts..." required></textarea>
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </form>
+        <div class="discussion-thread">
+          <div class="comment">
+            <div class="comment-author">
+              <img src="assets/user1.jpg" alt="Sarah M." width="40" height="40">
+              <span>Sarah M.</span>
+            </div>
+            <div class="comment-content">
+              <p>This lesson really challenged me to examine my motives in leadership. I realize I often seek recognition more than opportunities to serve. Jesus' example is so countercultural!</p>
+              <div class="comment-meta">
+                <span>2 days ago</span>
+                <button aria-label="Like Sarah's comment">♥ 12</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <nav class="lesson-navigation">
-      <button class="nav-btn" onclick="goToHome()">&larr; Back Home</button>
-      <button class="nav-btn" onclick="goToNextLesson()">Next Lesson &rarr;</button>
+    <!-- Lesson navigation -->
+    <nav class="lesson-navigation" aria-label="Lesson navigation">
+      <button class="nav-btn nav-prev" onclick="goToHome()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Courses
+      </button>
+      <button class="nav-btn nav-next" onclick="goToNextLesson()">
+        Next Lesson: The Heart of a Servant Leader
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
     </nav>
-
   </main>
 
-  <!-- FOOTER (unchanged) -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-links-group">
-        <div class="footer-column">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Community</a></li>
-          </ul>
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- FOOTER: Site information and additional navigation -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <!-- Main footer content -->
+      <div class="footer-content">
+        <!-- Company info and newsletter -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span class="logo-text">BibleStudy</span>
+          </div>
+          <p class="footer-description">Empowering spiritual growth and community transformation through comprehensive Bible study and service opportunities.</p>
+          
+          <!-- Newsletter signup -->
+          <div class="newsletter">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to receive the latest Bible studies and community updates.</p>
+            <form class="newsletter-form" id="newsletter-form">
+              <div class="input-group">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+              <div class="form-message" id="newsletter-message" role="alert"></div>
+            </form>
+          </div>
         </div>
-        <div class="footer-column">
-          <h4>Support Center</h4>
-          <ul>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Help Desk</a></li>
-            <li><a href="#">Documentation</a></li>
-            <li><a href="#">Live Chat</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Contact</h4>
-          <ul>
-            <li>Email: support@biblestudy.org</li>
-            <li>Phone: +254 700 123 456</li>
-            <li>Location: Nairobi, Kenya</li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Follow Us</h4>
-          <ul class="social-icons">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a>Facebook</li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a>Twitter</li>
-            <li><a href="#"><i class="fab fa-instagram"></i></a>Instagram</li>
-            <li><a href="#"><i class="fab fa-youtube"></i></a>YouTube</li>
-          </ul>
+
+        <!-- Footer navigation links -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#mission">About</a></li>
+              <li><a href="#courses-section">Courses</a></li>
+              <li><a href="#community">Community</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#faq">FAQs</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Contact Support</a></li>
+              <li><a href="#">Prayer Requests</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Daily Devotionals</a></li>
+              <li><a href="#">Bible Reading Plans</a></li>
+              <li><a href="#">Study Guides</a></li>
+              <li><a href="#">Community Projects</a></li>
+              <li><a href="#">Mobile App</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <div class="contact-info">
+              <p>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                support@biblestudy.org
+              </p>
+              <p>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +254 700 123 456
+              </p>
+              <p>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Nairobi, Kenya
+              </p>
+            </div>
+            
+            <!-- Social media links -->
+            <div class="social-links">
+              <a href="#" aria-label="Follow us on Facebook" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Follow us on Twitter" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Follow us on Instagram" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Follow us on YouTube" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                  <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer-newsletter">
-        <h4>Stay Updated</h4>
-        <p>Subscribe to receive the latest Bible studies and community updates.</p>
-        <form class="newsletter-form">
-          <input type="email" id="newsletter-email" placeholder="Your email" required>
-          <button type="submit">Subscribe</button>
-        </form>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <p>&copy; 2025 BibleStudy & Transformation Platform. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 BibleStudy Platform. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
