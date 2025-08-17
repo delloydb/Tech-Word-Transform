@@ -1,46 +1,327 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" /> <!-- Set character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Make layout responsive -->
-  <title>Bible Reader</title> <!-- Page title -->
-  <link rel="stylesheet" href="bible-reader.css" /> <!-- Link to CSS file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online Bible reader with multiple translations, bookmarking, and study tools">
+  <title>Bible Reader - Study God's Word Online</title>
+  <link rel="stylesheet" href="bible-reader.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Main container for Bible Reader -->
-  <div class="reader-container">
-    <h1>Bible Reader</h1> <!-- Page heading -->
+  <!-- HEADER: Main navigation and branding -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <!-- Logo and brand name -->
+        <div class="navbar-logo">
+          <a href="#" class="logo-link" aria-label="BibleStudy & Transformation - Go to homepage">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span class="logo-text">BibleStudy</span>
+          </a>
+        </div>
 
-    <!-- Controls to select Bible version, book, and chapter -->
-    <div class="controls">
-      <select id="version-select">
-        <option value="kjv">KJV</option>
-        <option value="niv">NIV</option>
-      </select>
+        <!-- Desktop navigation menu -->
+        <ul class="navbar-links" id="navbar-links" role="menubar">
+          <li role="none"><a href="#bible-reading" role="menuitem">Bible Reading</a></li>
+          <li role="none"><a href="#courses-section" role="menuitem">Courses</a></li>
+          <li role="none"><a href="#community" role="menuitem">Community</a></li>
+          <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
+          <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+          <li role="none"><a href="#" class="login-btn" role="menuitem">Login</a></li>
+        </ul>
 
-      <select id="book-select">
-        <!-- Options will be added by JS -->
-      </select>
+        <!-- Utility buttons -->
+        <div class="navbar-utilities">
+          <!-- Theme toggle button -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+            <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
 
-      <select id="chapter-select">
-        <!-- Options will be added by JS -->
-      </select>
-
-      <button id="load-btn">Load Chapter</button> <!-- Button to load the selected chapter -->
+          <!-- Mobile menu toggle -->
+          <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <!-- Display area for the Bible text -->
-    <div id="chapter-display">
-      <!-- Chapter content will be inserted here -->
-    </div>
-
-    <!-- Section to show saved bookmarks -->
-    <section id="bookmarks-section">
-      <h2>Bookmarked Verses</h2>
-      <ul id="bookmarks-list"></ul> <!-- Bookmarked verses will be listed here -->
+  <!-- MAIN CONTENT: Bible reader application -->
+  <main class="reader-container" id="bible-reading">
+    <h1 class="reader-title">Bible Reader</h1>
+    
+    <!-- Reading controls section -->
+    <section class="controls-section" aria-labelledby="controls-heading">
+      <h2 id="controls-heading" class="visually-hidden">Bible Reading Controls</h2>
+      
+      <div class="controls-grid">
+        <!-- Version selection -->
+        <div class="control-group">
+          <label for="version-select">Translation:</label>
+          <select id="version-select" aria-label="Select Bible translation">
+            <option value="kjv">King James Version (KJV)</option>
+            <option value="niv">New International Version (NIV)</option>
+            <option value="esv">English Standard Version (ESV)</option>
+            <option value="nlt">New Living Translation (NLT)</option>
+          </select>
+        </div>
+        
+        <!-- Book selection -->
+        <div class="control-group">
+          <label for="book-select">Book:</label>
+          <select id="book-select" aria-label="Select Bible book">
+            <!-- Options will be populated by JavaScript -->
+          </select>
+        </div>
+        
+        <!-- Chapter selection -->
+        <div class="control-group">
+          <label for="chapter-select">Chapter:</label>
+          <select id="chapter-select" aria-label="Select chapter">
+            <!-- Options will be populated by JavaScript -->
+          </select>
+        </div>
+        
+        <!-- Action buttons -->
+        <div class="button-group">
+          <button id="load-btn" class="btn-primary">Load Chapter</button>
+          <button id="random-btn" class="btn-secondary">Random Chapter</button>
+        </div>
+      </div>
+      
+      <!-- Reading progress indicator -->
+      <div class="reading-progress">
+        <label for="reading-progress-bar">Reading Progress:</label>
+        <progress id="reading-progress-bar" value="0" max="100">0%</progress>
+        <span id="progress-percentage">0%</span>
+      </div>
     </section>
-  </div>
+    
+    <!-- Bible text display section -->
+    <section class="bible-text-section" aria-labelledby="chapter-heading">
+      <div class="chapter-header">
+        <h2 id="chapter-heading"><span id="current-book">Genesis</span> <span id="current-chapter">1</span></h2>
+        <div class="chapter-actions">
+          <button id="bookmark-btn" aria-label="Bookmark current chapter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            </svg>
+          </button>
+          <button id="audio-btn" aria-label="Listen to this chapter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Chapter content display -->
+      <div id="chapter-display" class="chapter-content" role="article" aria-live="polite">
+        <p class="instruction-text">Select a book, chapter, and translation to begin reading.</p>
+      </div>
+      
+      <!-- Chapter navigation -->
+      <div class="chapter-navigation">
+        <button id="prev-chapter" class="btn-secondary" disabled>Previous Chapter</button>
+        <button id="next-chapter" class="btn-secondary">Next Chapter</button>
+      </div>
+    </section>
+    
+    <!-- Bookmark section -->
+    <section id="bookmarks-section" class="bookmarks-section" aria-labelledby="bookmarks-heading">
+      <div class="section-header">
+        <h2 id="bookmarks-heading">Saved Bookmarks</h2>
+        <button id="toggle-bookmarks" class="btn-text" aria-expanded="true" aria-controls="bookmarks-list">
+          <span class="btn-text-label">Collapse</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </button>
+      </div>
+      <div id="bookmarks-content">
+        <ul id="bookmarks-list" class="bookmarks-list"></ul>
+        <p id="no-bookmarks" class="empty-state">No bookmarks saved yet. Click the bookmark icon above to save chapters.</p>
+      </div>
+    </section>
+    
+    <!-- Study tools section -->
+    <section class="study-tools-section" aria-labelledby="tools-heading">
+      <h2 id="tools-heading">Study Tools</h2>
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h3>Cross References</h3>
+          <p>Explore related verses across the Bible.</p>
+          <button class="btn-secondary">View References</button>
+        </div>
+        <div class="tool-card">
+          <h3>Commentary</h3>
+          <p>Read explanations from trusted scholars.</p>
+          <button class="btn-secondary">View Commentary</button>
+        </div>
+        <div class="tool-card">
+          <h3>Word Study</h3>
+          <p>Dive deeper into original language meanings.</p>
+          <button class="btn-secondary">Study Words</button>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  <script src="bible-reader.js"></script> <!-- Link to JavaScript file -->
+  <!-- FOOTER: Site information and additional navigation -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <!-- Main footer content -->
+      <div class="footer-content">
+        <!-- Company info and newsletter -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+            <span class="logo-text">BibleStudy</span>
+          </div>
+          <p class="footer-description">Empowering spiritual growth and community transformation through comprehensive Bible study and service opportunities.</p>
+          
+          <!-- Newsletter signup -->
+          <div class="newsletter">
+            <h4>Stay Updated</h4>
+            <p>Subscribe to receive the latest Bible studies and community updates.</p>
+            <form class="newsletter-form" id="newsletter-form">
+              <div class="input-group">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </div>
+              <div class="form-message" id="newsletter-message" role="alert"></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer navigation links -->
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#mission">About</a></li>
+              <li><a href="#courses-section">Courses</a></li>
+              <li><a href="#community">Community</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="#faq">FAQs</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">Contact Support</a></li>
+              <li><a href="#">Prayer Requests</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="#">Daily Devotionals</a></li>
+              <li><a href="#">Bible Reading Plans</a></li>
+              <li><a href="#">Study Guides</a></li>
+              <li><a href="#">Community Projects</a></li>
+              <li><a href="#">Mobile App</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Connect</h4>
+            <div class="contact-info">
+              <p>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                support@biblestudy.org
+              </p>
+              <p>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                +254 700 123 456
+              </p>
+              <p>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Nairobi, Kenya
+              </p>
+            </div>
+            
+            <!-- Social media links -->
+            <div class="social-links">
+              <a href="#" aria-label="Follow us on Facebook" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Follow us on Twitter" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Follow us on Instagram" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Follow us on YouTube" class="social-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                  <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer-bottom">
+        <div class="footer-legal">
+          <p>&copy; 2025 BibleStudy & Transformation Platform. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top button -->
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <script src="bible-reader.js"></script>
 </body>
 </html>
