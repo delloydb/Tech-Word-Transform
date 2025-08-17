@@ -1,197 +1,119 @@
 /**
- * Login Page JavaScript
- * Handles form validation, submission, and Google Sign-In functionality
+ * BibleStudy Login Page - Interactive Features
+ * 
+ * This script handles:
+ * 1. Theme switching between light/dark modes
+ * 2. Mobile menu toggle
+ * 3. Form validation
+ * 4. Scroll-to-top button
  */
 
-// Wait for the DOM to be fully loaded before executing scripts
-document.addEventListener('DOMContentLoaded', () => {
-  // Reference to the login form
+document.addEventListener('DOMContentLoaded', function() {
+  // Theme Toggle Functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const htmlElement = document.documentElement;
+  
+  // Check for saved theme preference or use preferred color scheme
+  const savedTheme = localStorage.getItem('theme') || 
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  htmlElement.setAttribute('data-theme', savedTheme);
+  
+  // Theme toggle click handler
+  themeToggle.addEventListener('click', function() {
+    const currentTheme = htmlElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    htmlElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+  
+  // Mobile Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const navbarLinks = document.getElementById('navbar-links');
+  
+  menuToggle.addEventListener('click', function() {
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded);
+    navbarLinks.classList.toggle('active');
+  });
+  
+  // Form Validation
   const loginForm = document.getElementById('loginForm');
   
-  // Reference to form fields
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
-  const roleSelect = document.getElementById('role');
-  
-  // Regular expression for email validation
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  
-  /**
-   * Validate the login form
-   * @returns {boolean} True if form is valid, false otherwise
-   */
-  const validateForm = () => {
-    let isValid = true;
-    
-    // Validate email
-    if (!emailInput.value.trim()) {
-      showError(emailInput, 'Email is required');
-      isValid = false;
-    } else if (!emailRegex.test(emailInput.value.trim())) {
-      showError(emailInput, 'Please enter a valid email address');
-      isValid = false;
-    } else {
-      showSuccess(emailInput);
-    }
-    
-    // Validate password
-    if (!passwordInput.value.trim()) {
-      showError(passwordInput, 'Password is required');
-      isValid = false;
-    } else if (passwordInput.value.trim().length < 6) {
-      showError(passwordInput, 'Password must be at least 6 characters');
-      isValid = false;
-    } else {
-      showSuccess(passwordInput);
-    }
-    
-    // Validate role selection
-    if (!roleSelect.value) {
-      showError(roleSelect, 'Please select your interest');
-      isValid = false;
-    } else {
-      showSuccess(roleSelect);
-    }
-    
-    return isValid;
-  };
-  
-  /**
-   * Display error message for an input field
-   * @param {HTMLElement} input - The input element
-   * @param {string} message - The error message to display
-   */
-  const showError = (input, message) => {
-    const formGroup = input.parentElement;
-    formGroup.classList.add('error');
-    
-    // Check if error message already exists
-    let errorMessage = formGroup.querySelector('.error-message');
-    if (!errorMessage) {
-      errorMessage = document.createElement('p');
-      errorMessage.className = 'error-message';
-      formGroup.appendChild(errorMessage);
-    }
-    
-    errorMessage.textContent = message;
-    errorMessage.style.color = '#dc3545';
-    errorMessage.style.fontSize = '0.8rem';
-    errorMessage.style.marginTop = '0.25rem';
-  };
-  
-  /**
-   * Remove error styling and message from an input field
-   * @param {HTMLElement} input - The input element
-   */
-  const showSuccess = (input) => {
-    const formGroup = input.parentElement;
-    formGroup.classList.remove('error');
-    
-    const errorMessage = formGroup.querySelector('.error-message');
-    if (errorMessage) {
-      errorMessage.remove();
-    }
-  };
-  
-  /**
-   * Handle form submission
-   * @param {Event} e - The submit event
-   */
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    
-    if (validateForm()) {
-      // Form is valid - proceed with login
-      const role = roleSelect.value;
-      const roleDisplay = role.charAt(0).toUpperCase() + role.slice(1);
+  if (loginForm) {
+    loginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
       
-      // In a real application, you would send this data to your server
-      console.log('Login attempt with:', {
-        email: emailInput.value.trim(),
-        password: '••••••', // Never log actual passwords
-        role: role
-      });
+      // Reset previous errors
+      const errorMessages = document.querySelectorAll('.error-message');
+      errorMessages.forEach(el => el.textContent = '');
       
-      // Show loading state
-      const submitButton = loginForm.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.textContent;
-      submitButton.textContent = 'Logging in...';
-      submitButton.disabled = true;
+      // Validate email
+      const email = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+      if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        emailError.textContent = 'Please enter a valid email address';
+        email.focus();
+        return;
+      }
       
-      // Simulate API call with timeout
-      setTimeout(() => {
-        // Reset button state
-        submitButton.textContent = originalButtonText;
-        submitButton.disabled = false;
-        
-        // Redirect based on role (simulated success)
-        switch (role) {
-          case 'learner':
-            window.location.href = 'dashboard-learner.html';
-            break;
-          case 'tutor':
-            window.location.href = 'dashboard-tutor.html';
-            break;
-          case 'community':
-            window.location.href = 'dashboard-community.html';
-            break;
-          default:
-            window.location.href = 'dashboard.html';
-        }
-      }, 1500);
-    }
-  };
+      // Validate password
+      const password = document.getElementById('password');
+      const passwordError = document.getElementById('password-error');
+      if (!password.value || password.value.length < 8) {
+        passwordError.textContent = 'Password must be at least 8 characters';
+        password.focus();
+        return;
+      }
+      
+      // Validate role
+      const role = document.getElementById('role');
+      const roleError = document.getElementById('role-error');
+      if (!role.value) {
+        roleError.textContent = 'Please select your role';
+        role.focus();
+        return;
+      }
+      
+      // If all validations pass, submit the form
+      alert('Login successful! Redirecting...');
+      // In a real application, you would submit the form to the server here
+      // loginForm.submit();
+    });
+  }
   
-  /**
-   * Handle Google Sign-In response
-   * @param {Object} response - The Google Sign-In response object
-   */
-  window.handleGoogleSignIn = (response) => {
-    console.log('Google Sign-In response:', response);
-    
-    // Extract the credential (JWT)
-    const credential = response.credential;
-    
-    // In a real application, you would send this credential to your server
-    // for verification and user authentication
-    
-    // For demo purposes, we'll just show an alert and redirect
-    alert('Google Sign-In successful! Redirecting to dashboard...');
-    window.location.href = 'dashboard.html';
-  };
+  // Scroll-to-top Button
+  const scrollTopButton = document.getElementById('scroll-top');
   
-  // Add event listeners
-  loginForm.addEventListener('submit', handleFormSubmit);
-  
-  // Add input event listeners for real-time validation
-  emailInput.addEventListener('input', () => {
-    if (emailInput.value.trim() && !emailRegex.test(emailInput.value.trim())) {
-      showError(emailInput, 'Please enter a valid email address');
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      scrollTopButton.classList.add('visible');
     } else {
-      showSuccess(emailInput);
+      scrollTopButton.classList.remove('visible');
     }
   });
   
-  passwordInput.addEventListener('input', () => {
-    if (passwordInput.value.trim() && passwordInput.value.trim().length < 6) {
-      showError(passwordInput, 'Password must be at least 6 characters');
-    } else {
-      showSuccess(passwordInput);
-    }
+  scrollTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
   
-  roleSelect.addEventListener('change', () => {
-    if (roleSelect.value) {
-      showSuccess(roleSelect);
-    }
+  // Handle Google Sign-In (placeholder)
+  function handleGoogleSignIn(response) {
+    console.log('Google sign-in response:', response);
+    // In a real application, you would handle the Google sign-in response here
+  }
+  
+  // Close mobile menu when clicking on a link
+  const navLinks = document.querySelectorAll('.navbar-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (navbarLinks.classList.contains('active')) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navbarLinks.classList.remove('active');
+      }
+    });
   });
 });
-
-/**
- * Notes for production implementation:
- * 1. Replace YOUR_GOOGLE_CLIENT_ID with your actual Google OAuth client ID
- * 2. Implement proper server-side validation for both email/password and Google Sign-In
- * 3. Store sensitive data securely and use HTTPS
- * 4. Add proper error handling for failed login attempts
- * 5. Consider adding rate limiting to prevent brute force attacks
- */
