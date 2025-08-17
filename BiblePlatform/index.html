@@ -1,353 +1,698 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <!-- Character encoding -->
-  <meta charset="UTF-8">
-  <!-- Mobile responsiveness -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Page title -->
-  <title>Home | BibleStudy & Transformation</title>
-  <!-- Link to external stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+    <!-- Essential Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transform your life through Bible study and community engagement. Join our platform for spiritual growth, leadership development, and positive community impact.">
+    <meta name="keywords" content="Bible study, spiritual growth, Christian community, faith, transformation, leadership">
+    
+    <!-- Page Title -->
+    <title>Home | BibleStudy & Transformation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<!--  START: HEADER / NAVIGATION BAR  -->
-<header class="site-header">
-  <nav class="navbar">
-    
-    <!-- Logo area linking to homepage -->
-    <div class="navbar-logo">
-      <a href="index.html" class="logo-link">BibleStudy</a>
-    </div>
+    <!-- HEADER: Main navigation and branding -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="Main navigation">
+                <!-- Logo and brand name -->
+                <div class="navbar-logo">
+                    <a href="#" class="logo-link" aria-label="BibleStudy & Transformation - Go to homepage">
+                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        <span class="logo-text">BibleStudy</span>
+                    </a>
+                </div>
 
-    <!-- Navigation links (desktop + mobile) -->
-    <ul class="navbar-links" id="navbar-links">
-      <li><a href="#" target="_blank">Bible Read</a></li>
-      <li><a href="course.html" target="_blank">Courses</a></li>
-      <li><a href="/Community/community-tranform.html" target="_blank">Community</a></li>
-      <li><a href="donation.html" target="_blank">Donate</a></li>
-      <li><a href="login.html" target="_blank">Login</a></li>
-    </ul>
+                <!-- Desktop navigation menu -->
+                <ul class="navbar-links" id="navbar-links" role="menubar">
+                    <li role="none"><a href="#bible-reading" role="menuitem">Bible Reading</a></li>
+                    <li role="none"><a href="#courses-section" role="menuitem">Courses</a></li>
+                    <li role="none"><a href="#community" role="menuitem">Community</a></li>
+                    <li role="none"><a href="#testimonials" role="menuitem">Testimonials</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+                    <li role="none"><a href="#" class="login-btn" role="menuitem">Login</a></li>
+                </ul>
 
-    <!-- Hamburger menu for mobile -->
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-  </nav>
-</header>
-<!--  END: HEADER / NAVIGATION BAR  -->
+                <!-- Utility buttons -->
+                <div class="navbar-utilities">
+                    <!-- Theme toggle button -->
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+                        <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </button>
 
+                    <!-- Mobile menu toggle -->
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navbar-links">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<!-- ========== START: HERO SECTION ========== -->
-<section class="hero-section">
-  
-  <!-- Hero background image that appears behind text -->
-  <div class="hero-image-container">
-   
-  </div>
+    <!-- MAIN: Primary content area -->
+    <main>
+        <!-- HERO: Primary call-to-action and value proposition -->
+        <section class="hero-section" id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Discover Truth, Grow Spiritually, Transform Communities</h1>
+                    <p class="hero-subtitle">Discover your purpose through God's Word and grow into a life of impact. Every verse you study equips you to serve, mentor, and lead with love. As you grow spiritually, you become empowered to transform your heart and influence the world around you — one life at a time.</p>
+                    <div class="hero-buttons">
+                        <a href="#community" class="btn btn-primary">Start Your Journey</a>
+                        <a href="#courses-section" class="btn btn-secondary">Explore Courses</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="verse-of-day">
+                            <h3>Verse of the Day</h3>
+                            <blockquote>"For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future."</blockquote>
+                            <cite>Jeremiah 29:11</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <!-- Hero content including heading, paragraph, and buttons -->
-  <div class="hero-content">
-    <!-- Hero main heading -->
-    <h1 class="hero-title">
-      Discover Truth, Grow Spiritually, and Transform Communities
-    </h1>
+        <!-- STATS: Community impact statistics -->
+        <section class="stats-section">
+            <div class="container">
+                <ul class="stats-grid" role="list">
+                    <li class="stat-item">
+                        <span class="stat-number" data-count="10000">0</span>
+                        <span class="stat-label">Active Members</span>
+                    </li>
+                    <li class="stat-item">
+                        <span class="stat-number" data-count="150">0</span>
+                        <span class="stat-label">Courses Available</span>
+                    </li>
+                    <li class="stat-item">
+                        <span class="stat-number" data-count="500">0</span>
+                        <span class="stat-label">Community Projects</span>
+                    </li>
+                    <li class="stat-item">
+                        <span class="stat-number" data-count="50">0</span>
+                        <span class="stat-label">Countries Reached</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-    <!-- Hero supporting paragraph -->
-    <p class="hero-subtitle">
-      "Discover your purpose through God's Word and grow into a life of impact. Every verse you study equips you to serve, mentor, and lead with love. As you grow spiritually, you're empowered to transform your heart and influence the world around you — one life at a time."
-    </p>
+        <!-- MISSION: About section explaining platform purpose -->
+        <section class="mission-section" id="mission">
+            <div class="container">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="section-description">We equip you with structured Bible study tools and empower you to lead transformation both spiritually and socially through comprehensive learning experiences and community engagement.</p>
+                
+                <div class="mission-grid">
+                    <article class="mission-card">
+                        <div class="mission-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="mission-title">Spiritual Growth</h3>
+                        <p class="mission-text">Explore comprehensive Bible courses, daily devotionals, and guided study plans designed to help you grow steadily in faith, knowledge, and spiritual maturity through systematic learning.</p>
+                    </article>
 
-    <!-- Call-to-action buttons -->
-    <div class="hero-buttons">
-      <a href="/Community/community-tranform.html" class="btn primary" id="start-btn" target="_blank">Change Lives</a>
-      <a href="course.html" class="btn secondary" id="explore-btn" target="_blank">Explore Courses</a>
-    </div>
-  </div>
-</section>
-<!-- ========== END: HERO SECTION ========== -->
+                    <article class="mission-card">
+                        <div class="mission-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="mission-title">Community Transformation</h3>
+                        <p class="mission-text">Transform faith into meaningful action by leading service projects, mentoring others, and spreading positive change in your local community through collaborative initiatives and outreach programs.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-<!-- =================== START: ABOUT / MISSION SECTION =================== -->
-<section class="mission-section">
-  <!-- Section Title -->
-  <h2 class="mission-heading">Our Mission</h2>
+        <!-- COURSES: Featured course offerings -->
+        <section class="courses-section" id="courses-section">
+            <div class="container">
+                <h2 class="section-title">Explore Our Courses</h2>
+                <p class="section-description">We offer comprehensive learning opportunities to expand your understanding, increase wisdom, and equip you for transforming the world and changing lives for a better tomorrow.</p>
+                
+                <div class="courses-grid">
+                    <article class="course-card">
+                        <div class="course-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="course-title">Faith Foundations</h3>
+                        <p class="course-description">Build a solid foundation in Christian faith with essential biblical principles and core doctrines.</p>
+                        <div class="course-meta">
+                            <span class="course-duration">8 weeks</span>
+                            <span class="course-level">Beginner</span>
+                        </div>
+                        <button class="btn btn-outline">Enroll Now</button>
+                    </article>
 
-  <!-- Section Summary Text -->
-  <p class="mission-description">
-    We equip you with structured Bible study tools and empower you to lead transformation both spiritually and socially.
-  </p>
+                    <article class="course-card">
+                        <div class="course-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="course-title">Living Like Jesus</h3>
+                        <p class="course-description">Learn practical ways to model Christ's character in daily life and relationships.</p>
+                        <div class="course-meta">
+                            <span class="course-duration">6 weeks</span>
+                            <span class="course-level">Intermediate</span>
+                        </div>
+                        <button class="btn btn-outline">Enroll Now</button>
+                    </article>
 
-  <!-- Two-column Mission Highlights -->
-  <div class="mission-columns">
-    <!-- Column 1: Spiritual Growth -->
-    <div class="mission-box">
-      <!-- Icon area for visual emphasis -->
-      <div class="mission-icon">📖</div>
-      <h3 class="mission-subheading">Spiritual Growth</h3>
-      <p class="mission-text">
-        Explore Bible courses, devotionals, and guided study plans designed to help you grow steadily in faith and knowledge.
-      </p>
-    </div>
+                    <article class="course-card">
+                        <div class="course-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="course-title">Daniel's Visions</h3>
+                        <p class="course-description">Dive into biblical prophecy and prepare for your divine calling through Daniel's revelations.</p>
+                        <div class="course-meta">
+                            <span class="course-duration">10 weeks</span>
+                            <span class="course-level">Advanced</span>
+                        </div>
+                        <button class="btn btn-outline">Enroll Now</button>
+                    </article>
 
-    <!-- Column 2: Community Transformation -->
-    <div class="mission-box">
-      <!-- Icon area for visual emphasis -->
-      <div class="mission-icon">🌍</div>
-      <h3 class="mission-subheading">Community Transformation</h3>
-      <p class="mission-text">
-        Turn faith into action by leading projects, mentoring others, and spreading positive change in your local community.
-      </p>
-    </div>
-  </div>
-</section>
-<!-- =================== END: ABOUT / MISSION SECTION =================== -->
+                    <article class="course-card">
+                        <div class="course-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="course-title">Biblical Leadership</h3>
+                        <p class="course-description">Develop servant leadership skills based on biblical principles and examples.</p>
+                        <div class="course-meta">
+                            <span class="course-duration">12 weeks</span>
+                            <span class="course-level">Advanced</span>
+                        </div>
+                        <button class="btn btn-outline">Enroll Now</button>
+                    </article>
 
-<!-- ========================== -->
-<!--     FEATURED COURSES SECTION     -->
-<!-- ========================== -->
-<section class="courses-section" id="courses-section">
-  <h2 class="courses-heading">Explore Our Courses</h2>
-  <p>We offer you with an opportunity to get knowledge and expand your understanding and increase in wisdom as you move along with us in tranforming the world and changing lives for the better of tomorrow</p>
-  <!-- Grid of Course Cards -->
-  <div class="courses-grid">
-    <!-- Repeatable Course Card Template -->
-    <div class="course-card">
-      <div class="course-icon">📘</div>
-      <h3 class="course-title">Faith Foundations</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+                    <article class="course-card">
+                        <div class="course-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="course-title">Reformation History</h3>
+                        <p class="course-description">Explore the rich history of church reformation and its impact on modern Christianity.</p>
+                        <div class="course-meta">
+                            <span class="course-duration">8 weeks</span>
+                            <span class="course-level">Intermediate</span>
+                        </div>
+                        <button class="btn btn-outline">Enroll Now</button>
+                    </article>
 
+                    <article class="course-card">
+                        <div class="course-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <h3 class="course-title">Prayer & Fasting</h3>
+                        <p class="course-description">Deepen your spiritual discipline through biblical approaches to prayer and fasting.</p>
+                        <div class="course-meta">
+                            <span class="course-duration">6 weeks</span>
+                            <span class="course-level">Intermediate</span>
+                        </div>
+                        <button class="btn btn-outline">Enroll Now</button>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <div class="course-card">
-      <div class="course-icon">📗</div>
-      <h3 class="course-title">Living Like Jesus</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+        <!-- WORKFLOW: How the platform works -->
+        <section class="workflow-section" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How Our Platform Works</h2>
+                <p class="section-description">Get started on your spiritual journey in three simple steps</p>
+                
+                <div class="workflow-grid">
+                    <article class="workflow-step">
+                        <div class="step-number">01</div>
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Sign Up</h3>
+                        <p class="step-description">Create your free account and choose your role: Tutor, Learner, Community Builder, or Bible Enthusiast. Customize your learning preferences and spiritual goals.</p>
+                    </article>
 
-    <div class="course-card">
-      <div class="course-icon">📙</div>
-      <h3 class="course-title">Daniel's Visions</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+                    <article class="workflow-step">
+                        <div class="step-number">02</div>
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Enroll & Study</h3>
+                        <p class="step-description">Select from our comprehensive range of Bible courses and follow personalized daily reading plans at your own pace. Track your progress and engage with interactive content.</p>
+                    </article>
 
-    <div class="course-card">
-      <div class="course-icon">📖</div>
-      <h3 class="course-title">Biblical Leadership</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+                    <article class="workflow-step">
+                        <div class="step-number">03</div>
+                        <div class="step-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="step-title">Connect & Transform</h3>
+                        <p class="step-description">Join study groups, attend live sessions, and make a meaningful impact through community service projects. Connect with like-minded believers worldwide.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
+        <!-- USER ROLES: Community participants -->
+        <section class="user-roles" id="community">
+            <div class="container">
+                <h2 class="section-title">Meet Our Community</h2>
+                <p class="section-description">Join thousands of believers working together to study God's Word and transform communities</p>
+                
+                <div class="roles-grid">
+                    <article class="role-card featured">
+                        <div class="role-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                        </div>
+                        <h3 class="role-title">Tutors</h3>
+                        <p class="role-description">Experienced teachers who create, manage, and facilitate Bible lessons, discussions, and spiritual mentorship programs for learners at all levels.</p>
+                        <div class="role-stats">
+                            <span class="stat">500+ Active Tutors</span>
+                        </div>
+                    </article>
 
+                    <article class="role-card">
+                        <div class="role-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="role-title">Learners</h3>
+                        <p class="role-description">Students who engage with structured Bible content, track their spiritual progress, and participate in learning challenges and community discussions.</p>
+                        <div class="role-stats">
+                            <span class="stat">5,000+ Active Learners</span>
+                        </div>
+                    </article>
 
-    <div class="course-card">
-      <div class="course-icon">📕</div>
-      <h3 class="course-title">Reformation History</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+                    <article class="role-card">
+                        <div class="role-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="role-title">Community Builders</h3>
+                        <p class="role-description">Action-oriented members who apply biblical learning to make tangible differences through organized service projects and community outreach initiatives.</p>
+                        <div class="role-stats">
+                            <span class="stat">200+ Projects Completed</span>
+                        </div>
+                    </article>
 
-    <div class="course-card">
-      <div class="course-icon">📗</div>
-      <h3 class="course-title">Prayer & Fasting</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+                    <article class="role-card">
+                        <div class="role-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="role-title">Bible Enthusiasts</h3>
+                        <p class="role-description">Passionate believers who share God's Word, contribute valuable insights, and help keep our educational content rich, relevant, and spiritually enriching.</p>
+                        <div class="role-stats">
+                            <span class="stat">1,000+ Contributors</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <div class="course-card">
-      <div class="course-icon">📘</div>
-      <h3 class="course-title">Spiritual Gifts</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+        <!-- TESTIMONIALS: User success stories -->
+        <section class="testimonials-section" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">Lives Transformed</h2>
+                <p class="section-description">Hear from community members whose lives have been changed through Bible study and service</p>
+                
+                <div class="testimonials-grid">
+                    <article class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"This platform has completely transformed my understanding of Scripture. The structured courses and supportive community have helped me grow deeper in my faith than I ever thought possible."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Sarah M.</h4>
+                                <p class="author-role">Bible Study Leader</p>
+                            </div>
+                        </div>
+                    </article>
 
-    <div class="course-card">
-      <div class="course-icon">📙</div>
-      <h3 class="course-title">Church & Community</h3>
-      <p>Dive into prophecy and prepare for your divine calling.</p>
-      <button class="btn enroll-btn">Enroll Now</button>
-    </div>
+                    <article class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Through the community service projects, I've been able to put my faith into action in ways that truly matter. The platform connects learning with real-world impact beautifully."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Michael T.</h4>
+                                <p class="author-role">Community Builder</p>
+                            </div>
+                        </div>
+                    </article>
 
-  </div>
+                    <article class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"As a new believer, I was overwhelmed by where to start. The guided study plans and mentorship program gave me the foundation I needed to build my relationship with God."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="12" cy="7" r="4"/>
+                                </svg>
+                            </div>
+                            <div class="author-info">
+                                <h4 class="author-name">Grace K.</h4>
+                                <p class="author-role">New Believer</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
+        <!-- BIBLE READING: Daily reading plans -->
+        <section class="bible-reading" id="bible-reading">
+            <div class="container">
+                <h2 class="section-title">Daily Bible Reading Plans</h2>
+                <p class="section-description">Structured reading plans to guide your daily Scripture engagement</p>
+                
+                <div class="reading-plans">
+                    <article class="plan-card">
+                        <div class="plan-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3>New Testament in 90 Days</h3>
+                        <p>Read through the entire New Testament in just three months with this structured plan.</p>
+                        <button class="btn btn-outline">Start Reading</button>
+                    </article>
+                    
+                    <article class="plan-card">
+                        <div class="plan-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Psalms & Proverbs</h3>
+                        <p>Daily wisdom from Psalms and Proverbs to guide your spiritual journey.</p>
+                        <button class="btn btn-outline">Start Reading</button>
+                    </article>
+                    
+                    <article class="plan-card">
+                        <div class="plan-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Bible in One Year</h3>
+                        <p>Comprehensive plan to read the entire Bible in one year with daily readings.</p>
+                        <button class="btn btn-outline">Start Reading</button>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-<!-- ========================== -->
-<!--     PLATFORM WORKFLOW     -->
-<!-- ========================== -->
-<section class="workflow-section">
-  <!-- Section heading -->
-  <h2 class="workflow-heading">How the Platform Works</h2>
+        <!-- FAQ: Frequently asked questions -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                            <span>Is the platform completely free to use?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-1">
+                            <p>Yes, our core Bible study courses and community features are completely free. We also offer premium courses and advanced features for those who want to deepen their learning experience.</p>
+                        </div>
+                    </article>
 
-  <!-- Steps container with three workflow steps -->
-  <div class="workflow-steps">
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                            <span>Do I need any prior Bible knowledge to join?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-2">
+                            <p>Not at all! Our courses are designed for all levels, from complete beginners to advanced Bible scholars. We have foundational courses that start with the basics and gradually build your knowledge.</p>
+                        </div>
+                    </article>
 
-    <!-- Step 1: Sign Up -->
-    <div class="workflow-step">
-      <!-- Icon representing sign-up -->
-      <div class="step-icon">🖊️</div>
-      <!-- Step title -->
-      <h3 class="step-title">1. Sign Up</h3>
-      <!-- Step description -->
-      <p class="step-text">Create your free account and choose your role: Tutor, Learner, or Community Builder.</p>
-    </div>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                            <span>How do the community service projects work?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-3">
+                            <p>Community Builders organize and lead service projects based on local needs. You can join existing projects in your area or propose new ones. We provide resources, coordination tools, and support to make your service efforts effective.</p>
+                        </div>
+                    </article>
 
-    <!-- Step 2: Enroll & Study -->
-    <div class="workflow-step">
-      <!-- Icon representing study -->
-      <div class="step-icon">📚</div>
-      <!-- Step title -->
-      <h3 class="step-title">2. Enroll & Study</h3>
-      <!-- Step description -->
-      <p class="step-text">Select from a range of Bible courses and follow daily reading plans at your pace.</p>
-    </div>
+                    <article class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                            <span>Can I study at my own pace?</span>
+                            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer" id="faq-answer-4">
+                            <p>Absolutely! While some courses have suggested timelines and live sessions, most content is self-paced. You can progress through materials as quickly or slowly as works for your schedule and learning style.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <!-- Step 3: Connect & Act -->
-    <div class="workflow-step">
-      <!-- Icon representing community action -->
-      <div class="step-icon">🤝</div>
-      <!-- Step title -->
-      <h3 class="step-title">3. Connect & Act</h3>
-      <!-- Step description -->
-      <p class="step-text">Join study groups, attend live sessions, and make an impact through community projects.</p>
-    </div>
+        <!-- CTA: Final call-to-action -->
+        <section class="cta-section" id="join-us">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Join Our Movement of Faith & Service</h2>
+                    <p class="cta-description">Step into a vibrant community of learners, mentors, and changemakers transforming lives through Scripture and action. Your spiritual journey and community impact start today.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary btn-large">Create Your Account</a>
+                        <a href="#courses-section" class="btn btn-secondary btn-large">Browse Courses</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  </div>
-</section>
+    <!-- FOOTER: Site information and additional navigation -->
+    <footer class="site-footer" id="contact">
+        <div class="container">
+            <!-- Main footer content -->
+            <div class="footer-content">
+                <!-- Company info and newsletter -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                        <span class="logo-text">BibleStudy</span>
+                    </div>
+                    <p class="footer-description">Empowering spiritual growth and community transformation through comprehensive Bible study and service opportunities.</p>
+                    
+                    <!-- Newsletter signup -->
+                    <div class="newsletter">
+                        <h4>Stay Updated</h4>
+                        <p>Subscribe to receive the latest Bible studies and community updates.</p>
+                        <form class="newsletter-form" id="newsletter-form">
+                            <div class="input-group">
+                                <input type="email" id="newsletter-email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+                                <button type="submit" class="btn btn-primary">Subscribe</button>
+                            </div>
+                            <div class="form-message" id="newsletter-message" role="alert"></div>
+                        </form>
+                    </div>
+                </div>
 
+                <!-- Footer navigation links -->
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#mission">About</a></li>
+                            <li><a href="#courses-section">Courses</a></li>
+                            <li><a href="#community">Community</a></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                        </ul>
+                    </div>
 
-<!-- ========================== -->
-<!--     USER ROLES SECTION     -->
-<!-- ========================== -->
-<section class="user-roles">
-  <!-- Section Heading -->
-  <h2>Meet Our Participants in all  Activities</h2>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="#">Prayer Requests</a></li>
+                        </ul>
+                    </div>
 
-  <!-- Pyramid Wrapper Container -->
-  <div class="roles-pyramid">
-    <!-- Top Role Card -->
-    <div class="role-card top">
-      <div class="role-icon">👩‍🏫</div>
-      <h3>Tutors</h3>
-      <p>Create, manage, and <br> facilitate Bible lessons, <br> and discussions.</p>
-    </div>
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Daily Devotionals</a></li>
+                            <li><a href="#">Bible Reading Plans</a></li>
+                            <li><a href="#">Study Guides</a></li>
+                            <li><a href="#">Community Projects</a></li>
+                            <li><a href="#">Mobile App</a></li>
+                        </ul>
+                    </div>
 
-    <!-- Middle Row with Center Hub Card and Two Roles -->
-    <div class="middle-row">
-      <div class="role-card left">
-        <div class="role-icon">📘</div>
-        <h3>Learners</h3>
-        <p>Engage with structured Bible content, track your progress, and join challenges.</p>
-      </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <div class="contact-info">
+                            <p>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                support@biblestudy.org
+                            </p>
+                            <p>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +254 700 123 456
+                            </p>
+                            <p>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Nairobi, Kenya
+                            </p>
+                        </div>
+                        
+                        <!-- Social media links -->
+                        <div class="social-links">
+                            <a href="#" aria-label="Follow us on Facebook" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Follow us on Twitter" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Follow us on Instagram" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Follow us on YouTube" class="social-link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                    <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-      <!-- Central Connector Card with Animated Arrows -->
-      <div class="role-hub">
-        <div class="hub-icon">🔄</div>
-        <p>Connect</p>
-      </div>
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2025 BibleStudy & Transformation Platform. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-      <div class="role-card right">
-        <div class="role-icon">🤝</div>
-        <h3>Community Builders</h3>
-        <p>Apply what you learn to make <br> a difference through service.</p>
-      </div>
-    </div>
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top of page">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
 
-    <!-- Bottom Role Card -->
-    <div class="role-card bottom">
-      <div class="role-icon">📖</div>
-      <h3>Bible Enthusiasts</h3>
-      <p>Share the Word, contribute insights, <br> and keep our content rich and growing.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================ -->
-<!--     CALL‑TO‑ACTION SECTION    -->
-<!-- ============================ -->
-<section class="cta-section">
-  <!-- CTA Heading -->
-  <h2 class="cta-title">
-    Join Our Movement of Faith & Service
-  </h2>
-  <!-- CTA Supporting Text -->
-  <p class="cta-text">
-    Step into a vibrant community of learners, mentors, and changemakers transforming lives through Scripture and action.
-  </p>
-  <!-- Primary CTA Button -->
-  <a href="login.html" class="cta-button" target="_blank">
-    Create Your Account
-  </a>
-</section>
-<!-- ========================== -->
-<!--         FOOTER          -->
-<!-- ========================== -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <!-- Grouped Links Container -->
-    <div class="footer-links-group">
-      <!-- Quick Links -->
-      <div class="footer-column">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutstudy.html" target="_blank">About</a></li>
-          <li><a href="/BiblePlatform/course.html" target="_blank">Courses</a></li>
-          <li><a href="/Community/community-tranform.html" target="_blank">Community</a></li>
-        </ul>
-      </div>
-
-      <!-- Support Center -->
-      <div class="footer-column">
-        <h4>Support Center</h4>
-        <ul>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Help Desk</a></li>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">Live Chat</a></li>
-        </ul>
-      </div>
-
-      <!-- Contact Info -->
-      <div class="footer-column">
-        <h4>Contact</h4>
-        <ul>
-          <li>Email: support@biblestudy.org</li>
-          <li>Phone: +254 700 123 456</li>
-          <li>Location: Nairobi, Kenya</li>
-        </ul>
-      </div>
-
-      <!-- Social Media Links -->
-      <div class="footer-column">
-        <h4>Follow Us</h4>
-        <ul class="social-icons">
-          <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>Facebook</li>
-          <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>Twitter</li>
-          <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>Instagram</li>
-          <li><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>YouTube</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Newsletter -->
-    <div class="footer-newsletter">
-      <h4>Stay Updated</h4>
-      <p>Subscribe to receive the latest Bible studies and community updates.</p>
-      <form class="newsletter-form">
-        <input type="email" id="newsletter-email" placeholder="Your email" required>
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Copyright -->
-  <div class="footer-bottom">
-    <p>&copy; 2025 BibleStudy Platform. All rights reserved.</p>
-  </div>
-</footer>
-
-<!-- Font Awesome for social icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
